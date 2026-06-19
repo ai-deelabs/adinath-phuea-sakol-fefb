@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>อาดินาถเพื่อสากล (ประเทศไทย) — สมุนไพรไทยแท้</title>
+<meta name="description" content="อาดินาถเพื่อสากล ผลิตภัณฑ์สมุนไพรไทยแท้ สบู่และสครับผิวกาย เพื่อความงามที่ยั่งยืนและสันติภาพสากล">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700&family=IBM+Plex+Sans+Thai:wght@300;400;600&family=Noto+Serif+Thai:wght@300;400;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@0.460.0"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --k:#080B09;
+  --km:#0D100E;
+  --iv:#E2D5B8;
+  --iv6:rgba(226,213,184,0.6);
+  --iv2:rgba(226,213,184,0.2);
+  --iv08:rgba(226,213,184,0.08);
+  --tl:#04B8A2;
+  --tl2:rgba(4,184,162,0.2);
+  --tl06:rgba(4,184,162,0.06);
+  --mg:140px;
+  --mgm:24px;
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{
+  background:var(--k);
+  color:var(--iv);
+  font-family:'IBM Plex Sans Thai','Sukhumvit Set',sans-serif;
+  font-size:16px;
+  line-height:1.8;
+  word-break:break-word;
+  overflow-wrap:break-word;
+  overflow-x:hidden;
+}
+
+/* TYPOGRAPHY */
+.ec{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.06em}
+.td{font-family:'Noto Serif Thai',serif;font-weight:300;line-height:1.5}
+
+/* NAV */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:26px var(--mg);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:padding .4s,background .4s,border-color .4s;
+  border-bottom:1px solid transparent;
+}
+.nav.on{
+  padding:14px var(--mg);
+  background:rgba(8,11,9,0.93);
+  backdrop-filter:blur(14px);
+  border-color:var(--iv08);
+}
+.nav__logo{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.05rem;
+  text-transform:uppercase;letter-spacing:.14em;color:var(--iv);text-decoration:none;line-height:1.2;
+}
+.nav__logo em{
+  display:block;font-style:normal;font-weight:300;font-size:.6rem;
+  letter-spacing:.22em;color:var(--tl);margin-top:3px;
+}
+.nav__links{display:flex;align-items:center;gap:36px;list-style:none}
+.nav__links a{
+  font-family:'Barlow Condensed',sans-serif;font-size:.75rem;
+  text-transform:uppercase;letter-spacing:.18em;color:var(--iv6);
+  text-decoration:none;transition:color .3s;padding:8px 0;
+}
+.nav__links a:hover{color:var(--tl)}
+.nav__r{display:flex;align-items:center;gap:20px}
+.lang-sw{
+  display:flex;align-items:center;gap:5px;
+  font-family:'Barlow Condensed',sans-serif;font-size:.75rem;letter-spacing:.1em;
+  color:var(--iv6);background:none;border:none;transition:color .3s;
+}
+.lang-sw:hover{color:var(--tl)}
+.nav__hbg{display:none;background:none;border:none;color:var(--iv);cursor:pointer;padding:8px}
+
+/* MOBILE NAV */
+.mnav{
+  display:none;position:fixed;inset:0;z-index:99;
+  background:rgba(8,11,9,.97);
+  flex-direction:column;align-items:center;justify-content:center;gap:40px;
+}
+.mnav.open{display:flex}
+.mnav a{
+  font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:.15em;color:var(--iv);text-decoration:none;transition:color .3s;
+}
+.mnav a:hover{color:var(--tl)}
+.mnav__close{
+  position:absolute;top:24px;right:var(--mgm);
+  background:none;border:none;color:var(--iv);cursor:pointer;padding:8px;
+}
+.mnav__lang{display:flex;align-items:center;gap:6px;font-family:'Barlow Condensed',sans-serif;font-size:.85rem;letter-spacing:.12em;color:var(--iv6)}
+
+/* HERO */
+.hero{
+  position:relative;width:100%;min-height:100vh;
+  display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;
+}
+.hero__bg{
+  position:absolute;inset:0;
+  background-image:url('https://images.unsplash.com/photo-1768392811099-65020907ab42?w=1800&h=900&fit=crop');
+  background-size:cover;background-position:center;
+  transform:scale(1.06);transition:transform 9s ease-out;
+  will-change:transform;
+}
+.hero__bg.loaded{transform:scale(1)}
+.hero__veil{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(8,11,9,.97) 0%,rgba(8,11,9,.55) 45%,rgba(8,11,9,.18) 100%);
+}
+.hero__c{
+  position:relative;z-index:2;
+  padding:0 var(--mg) 90px;
+  max-width:1000px;
+}
+.hero__eye{
+  font-family:'Barlow Condensed',sans-serif;font-size:.68rem;
+  text-transform:uppercase;letter-spacing:.28em;color:var(--tl);
+  margin-bottom:28px;display:flex;align-items:center;gap:14px;
+}
+.hero__eye::before{content:'';display:block;width:36px;height:1px;background:var(--tl)}
+.hero__h1{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(3.8rem,9vw,9.5rem);
+  font-weight:700;text-transform:uppercase;
+  letter-spacing:-.02em;line-height:.88;
+  color:var(--iv);margin-bottom:18px;
+}
+.hero__th{
+  font-family:'Noto Serif Thai',serif;font-weight:300;
+  font-size:clamp(1.6rem,3.5vw,3rem);
+  line-height:1.5;color:var(--iv6);margin-bottom:36px;
+}
+.hero__body{
+  font-size:.92rem;color:var(--iv6);
+  max-width:460px;margin-bottom:44px;line-height:1.9;
+}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap}
+.btn-p{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'Barlow Condensed',sans-serif;font-size:.82rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:.14em;
+  color:var(--k);background:var(--tl);
+  padding:.9em 2em;text-decoration:none;
+  clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));
+  transition:background .3s,transform .3s;
+}
+.btn-p:hover{background:var(--iv);transform:translateY(-2px)}
+.btn-g{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'Barlow Condensed',sans-serif;font-size:.82rem;font-weight:500;
+  text-transform:uppercase;letter-spacing:.14em;
+  color:var(--iv);background:transparent;padding:.9em 2em;
+  text-decoration:none;border:1px solid var(--iv2);
+  transition:border-color .3s,color .3s,transform .3s;
+}
+.btn-g:hover{border-color:var(--tl);color:var(--tl);transform:translateY(-2px)}
+.scroll-hint{
+  position:absolute;bottom:40px;right:var(--mg);z-index:2;
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+}
+.scroll-hint span{
+  font-family:'Barlow Condensed',sans-serif;font-size:.6rem;
+  text-transform:uppercase;letter-spacing:.22em;color:var(--iv2);
+  writing-mode:vertical-lr;
+}
+.scroll-line{width:1px;height:56px;background:linear-gradient(to bottom,var(--tl),transparent);animation:spulse 2s ease-in-out infinite}
+@keyframes spulse{0%,100%{opacity:.3}50%{opacity:1}}
+
+/* DIVIDER */
+.hr{width:100%;height:1px;background:linear-gradient(to right,transparent,var(--iv2),transparent)}
+
+/* PHILOSOPHY */
+.phi{padding:110px var(--mg);position:relative}
+.phi__n{
+  font-family:'Barlow Condensed',sans-serif;font-size:.66rem;
+  text-transform:uppercase;letter-spacing:.3em;color:var(--tl);margin-bottom:56px;
+}
+.phi__q{
+  font-family:'Noto Serif Thai',serif;font-weight:300;
+  font-size:clamp(1.7rem,3.2vw,2.8rem);line-height:1.6;
+  color:var(--iv);max-width:820px;margin-bottom:60px;
+  border-left:2px solid var(--tl);padding-left:32px;
+}
+.phi__row{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.phi__txt{font-size:.92rem;color:var(--iv6);line-height:1.9}
+.phi__stat{border-left:1px solid var(--iv2);padding-left:40px}
+.phi__num{
+  font-family:'Barlow Condensed',sans-serif;font-size:5.5rem;
+  font-weight:700;line-height:1;color:var(--tl);margin-bottom:6px;
+}
+.phi__lbl{font-size:.84rem;color:var(--iv6);line-height:1.9}
+
+/* PRODUCTS */
+.prod-panel{
+  position:relative;width:100%;min-height:60vh;
+  display:flex;overflow:hidden;
+}
+.prod-panel:nth-child(odd){flex-direction:row}
+.prod-panel:nth-child(even){flex-direction:row-reverse}
+.prod-panel__img{flex:0 0 50%;position:relative;overflow:hidden}
+.prod-panel__img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s ease}
+.prod-panel:hover .prod-panel__img img{transform:scale(1.04)}
+.prod-panel__img::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to right,transparent,rgba(8,11,9,.25));
+}
+.prod-panel:nth-child(even) .prod-panel__img::after{
+  background:linear-gradient(to left,transparent,rgba(8,11,9,.25));
+}
+.prod-panel__c{
+  flex:0 0 50%;padding:72px 72px;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  background:var(--km);position:relative;
+}
+.prod-tag{
+  font-family:'Barlow Condensed',sans-serif;font-size:.66rem;
+  text-transform:uppercase;letter-spacing:.3em;color:var(--tl);
+  margin-bottom:18px;display:flex;align-items:center;gap:12px;
+}
+.prod-tag::before{content:'';width:22px;height:1px;background:var(--tl)}
+.prod-h{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(2.2rem,3.8vw,3.8rem);
+  font-weight:700;text-transform:uppercase;line-height:.92;
+  color:var(--iv);margin-bottom:14px;
+}
+.prod-th{
+  font-family:'Noto Serif Thai',serif;font-weight:300;
+  font-size:clamp(1.1rem,2vw,1.6rem);
+  line-height:1.5;color:var(--tl);margin-bottom:22px;
+}
+.prod-desc{font-size:.88rem;color:var(--iv6);line-height:1.9;margin-bottom:28px;max-width:380px}
+.itags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:34px}
+.itag{
+  font-family:'Barlow Condensed',sans-serif;font-size:.66rem;
+  text-transform:uppercase;letter-spacing:.1em;
+  color:var(--iv6);border:1px solid var(--iv2);padding:.45em 1em;
+  transition:border-color .3s,color .3s;
+}
+.itag:hover{border-color:var(--tl);color:var(--tl)}
+.prod-n{
+  position:absolute;top:36px;right:36px;
+  font-family:'Barlow Condensed',sans-serif;font-size:9rem;font-weight:700;
+  line-height:1;color:rgba(226,213,184,.025);
+  user-select:none;pointer-events:none;
+}
+
+/* HERITAGE */
+.herit{
+  padding:110px var(--mg);position:relative;overflow:hidden;
+  background:var(--k);
+}
+.herit::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(to right,var(--tl),transparent);
+}
+.herit__top{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-bottom:72px}
+.herit__h{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(3rem,6vw,6.5rem);
+  font-weight:700;text-transform:uppercase;line-height:.88;
+  color:var(--iv);
+}
+.herit__h span{display:block;color:var(--tl)}
+.herit__side{display:flex;flex-direction:column;justify-content:flex-end}
+.herit__txt{font-size:.92rem;color:var(--iv6);line-height:1.9;margin-bottom:28px}
+.herit__imgs{
+  display:grid;grid-template-columns:1.6fr 1fr;gap:2px;
+  clip-path:polygon(0 0,100% 0,100% calc(100% - 28px),calc(100% - 28px) 100%,0 100%);
+}
+.herit__img{width:100%;height:460px;object-fit:cover;display:block;filter:brightness(.75) sepia(.2);transition:filter .5s}
+.herit__img:hover{filter:brightness(.9) sepia(.05)}
+
+/* VALUES */
+.vals{padding:100px var(--mg);background:var(--km)}
+.vals__lbl{
+  font-family:'Barlow Condensed',sans-serif;font-size:.66rem;
+  text-transform:uppercase;letter-spacing:.3em;color:var(--tl);
+  margin-bottom:56px;display:flex;align-items:center;gap:16px;
+}
+.vals__lbl::after{content:'';flex:1;height:1px;background:var(--iv08)}
+.vals__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--iv08)}
+.val{background:var(--k);padding:44px 36px;transition:background .3s}
+.val:hover{background:var(--tl06)}
+.val__icon{color:var(--tl);margin-bottom:22px}
+.val__num{
+  font-family:'Barlow Condensed',sans-serif;font-size:.65rem;
+  letter-spacing:.18em;color:rgba(226,213,184,.25);margin-bottom:14px;
+}
+.val__en{
+  font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;
+  font-weight:700;text-transform:uppercase;letter-spacing:.04em;
+  line-height:1.1;color:var(--iv);margin-bottom:8px;
+}
+.val__th{
+  font-family:'Noto Serif Thai',serif;font-weight:300;
+  font-size:.95rem;line-height:1.5;color:var(--tl);margin-bottom:14px;
+}
+.val__body{font-size:.82rem;color:var(--iv6);line-height:1.9}
+
+/* INGREDIENTS */
+.ings{padding:110px var(--mg);position:relative;overflow:hidden}
+.ings__hdr{margin-bottom:72px}
+.ings__hen{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(2.8rem,5.5vw,5.5rem);
+  font-weight:700;text-transform:uppercase;line-height:.88;color:var(--iv);margin-bottom:12px;
+}
+.ings__hth{
+  font-family:'Noto Serif Thai',serif;font-weight:300;
+  font-size:clamp(1.1rem,2.2vw,1.8rem);line-height:1.5;color:var(--iv6);
+}
+.ings__scroll{
+  display:flex;gap:2px;overflow-x:auto;
+  scrollbar-width:none;-ms-overflow-style:none;padding-bottom:2px;
+}
+.ings__scroll::-webkit-scrollbar{display:none}
+.ing{
+  flex:0 0 270px;background:var(--km);
+  border:1px solid var(--iv08);padding:36px 30px;
+  position:relative;overflow:hidden;transition:border-color .3s,transform .3s;
+}
+.ing:hover{border-color:rgba(4,184,162,.4);transform:translateY(-4px)}
+.ing__icon{color:var(--tl);margin-bottom:22px}
+.ing__en{
+  font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;
+  font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--iv);margin-bottom:4px;
+}
+.ing__th{
+  font-family:'Noto Serif Thai',serif;font-weight:300;
+  font-size:.88rem;line-height:1.5;color:var(--tl);margin-bottom:14px;
+}
+.ing__txt{font-size:.8rem;color:var(--iv6);line-height:1.9}
+.ing__bg{
+  position:absolute;bottom:-14px;right:-4px;
+  font-family:'Barlow Condensed',sans-serif;font-size:5rem;font-weight:700;
+  color:rgba(226,213,184,.03);user-select:none;pointer-events:none;
+}
+
+/* MISSION */
+.mis{
+  position:relative;min-height:80vh;
+  display:flex;align-items:flex-end;overflow:hidden;
+}
+.mis__bg{
+  position:absolute;inset:0;
+  background-image:url('https://images.unsplash.com/photo-1605818725676-23c12926e41f?w=1600&h=900&fit=crop');
+  background-size:cover;background-position:center;
+  filter:brightness(.32) sepia(.25);
+}
+.mis__veil{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(8,11,9,.97) 0%,rgba(8,11,9,.4) 55%,transparent 100%);
+}
+.mis__c{position:relative;z-index:2;padding:0 var(--mg) 100px;max-width:680px}
+.mis__eye{
+  font-family:'Barlow Condensed',sans-serif;font-size:.66rem;
+  text-transform:uppercase;letter-spacing:.3em;color:var(--tl);margin-bottom:22px;
+}
+.mis__hen{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(3rem,6vw,5.5rem);
+  font-weight:700;text-transform:uppercase;line-height:.88;
+  color:var(--iv);margin-bottom:16px;
+}
+.mis__hth{
+  font-family:'Noto Serif Thai',serif;font-weight:300;
+  font-size:clamp(1.2rem,2.5vw,2rem);line-height:1.5;
+  color:var(--iv6);margin-bottom:30px;
+}
+.mis__txt{font-size:.92rem;color:var(--iv6);line-height:1.9;margin-bottom:44px}
+
+/* TESTIMONIALS */
+.testi{padding:110px var(--mg);background:var(--k)}
+.testi__hdr{margin-bottom:64px}
+.testi__lbl{
+  font-family:'Barlow Condensed',sans-serif;font-size:.66rem;
+  text-transform:uppercase;letter-spacing:.3em;color:var(--tl);margin-bottom:14px;
+}
+.testi__hen{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(2.5rem,5vw,4.5rem);
+  font-weight:700;text-transform:uppercase;line-height:.9;color:var(--iv);
+}
+.testi__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--iv08)}
+.tc{background:var(--k);padding:44px 36px;transition:background .3s}
+.tc:hover{background:var(--tl06)}
+.tc__q{
+  font-family:'Barlow Condensed',sans-serif;font-size:3rem;
+  line-height:1;color:var(--tl);opacity:.35;margin-bottom:18px;
+}
+.tc__txt{font-size:.88rem;color:var(--iv6);line-height:1.9;margin-bottom:28px}
+.tc__who{display:flex;align-items:center;gap:14px}
+.tc__av{
+  width:44px;height:44px;border-radius:50%;
+  background:var(--tl2);display:flex;align-items:center;justify-content:center;
+  color:var(--tl);flex-shrink:0;
+}
+.tc__name{
+  font-family:'Barlow Condensed',sans-serif;font-size:.88rem;
+  font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--iv);
+}
+.tc__loc{font-size:.72rem;color:rgba(226,213,184,.35);line-height:1.5}
+
+/* CONTACT */
+.cont{
+  padding:110px var(--mg);background:var(--km);
+  position:relative;overflow:hidden;
+}
+.cont::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(to right,var(--tl),transparent);
+}
+.cont__grid{display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:start}
+.cont__hen{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(3rem,5.5vw,5.5rem);
+  font-weight:700;text-transform:uppercase;line-height:.88;
+  color:var(--iv);margin-bottom:14px;
+}
+.cont__hth{
+  font-family:'Noto Serif Thai',serif;font-weight:300;
+  font-size:clamp(1.1rem,2vw,1.7rem);line-height:1.5;
+  color:var(--tl);margin-bottom:28px;
+}
+.cont__txt{font-size:.9rem;color:var(--iv6);line-height:1.9;margin-bottom:40px}
+.cont__info{display:flex;flex-direction:column;gap:18px}
+.cont__row{display:flex;align-items:flex-start;gap:14px;color:var(--iv6);font-size:.88rem;line-height:1.8}
+.cont__row i{color:var(--tl);flex-shrink:0;margin-top:3px}
+.cform{display:flex;flex-direction:column;gap:18px}
+.cform input,.cform textarea{
+  background:rgba(226,213,184,.04);
+  border:1px solid var(--iv2);
+  color:var(--iv);
+  font-family:'IBM Plex Sans Thai',sans-serif;font-size:.9rem;
+  padding:15px 18px;outline:none;width:100%;
+  transition:border-color .3s;
+}
+.cform input::placeholder,.cform textarea::placeholder{color:rgba(226,213,184,.28)}
+.cform input:focus,.cform textarea:focus{border-color:var(--tl)}
+.cform textarea{height:140px;resize:none}
+.cform button{
+  font-family:'Barlow Condensed',sans-serif;font-size:.82rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:.14em;
+  color:var(--k);background:var(--tl);border:none;cursor:pointer;
+  padding:.9em 2em;display:inline-flex;align-items:center;gap:10px;
+  clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));
+  transition:background .3s;
+}
+.cform button:hover{background:var(--iv)}
+
+/* FOOTER */
+.foot{
+  padding:44px var(--mg);
+  border-top:1px solid var(--iv08);
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;
+}
+.foot__logo{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.14em;color:var(--iv);
+}
+.foot__logo em{
+  display:block;font-style:normal;font-weight:300;font-size:.58rem;
+  letter-spacing:.2em;color:rgba(226,213,184,.35);margin-top:4px;
+}
+.foot__copy{
+  font-family:'Barlow Condensed',sans-serif;font-size:.72rem;
+  letter-spacing:.1em;color:rgba(226,213,184,.28);
+}
+.foot__links{display:flex;gap:28px;list-style:none;flex-wrap:wrap}
+.foot__links a{
+  font-family:'Barlow Condensed',sans-serif;font-size:.72rem;
+  text-transform:uppercase;letter-spacing:.1em;
+  color:rgba(226,213,184,.35);text-decoration:none;transition:color .3s;
+}
+.foot__links a:hover{color:var(--tl)}
+
+/* REVEAL ANIMATIONS */
+.rev{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.revL{opacity:0;transform:translateX(-28px);transition:opacity .7s ease,transform .7s ease}
+.rev.in,.revL.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* MOBILE */
+@media(max-width:767px){
+  :root{--mg:var(--mgm)}
+  .nav{padding:18px var(--mgm)}
+  .nav.on{padding:13px var(--mgm)}
+  .nav__links{display:none}
+  .nav__hbg{display:flex}
+  .hero__c{padding:0 var(--mgm) 60px}
+  .scroll-hint{display:none}
+  .phi__row{grid-template-columns:1fr;gap:36px}
+  .prod-panel{flex-direction:column!important;min-height:auto}
+  .prod-panel__img{flex:none;height:260px}
+  .prod-panel__c{padding:44px var(--mgm)}
+  .prod-n{display:none}
+  .herit__top{grid-template-columns:1fr;gap:28px}
+  .herit__imgs{grid-template-columns:1fr}
+  .herit__img{height:240px}
+  .vals__grid{grid-template-columns:1fr}
+  .testi__grid{grid-template-columns:1fr}
+  .cont__grid{grid-template-columns:1fr;gap:52px}
+  .foot{flex-direction:column;align-items:flex-start}
+  .mis__c{padding:0 var(--mgm) 72px}
+}
+@media(min-width:768px) and (max-width:1100px){
+  :root{--mg:60px}
+  .vals__grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav__logo">
+    Adinath
+    <em data-lang-th="เพื่อสากล (ประเทศไทย)" data-lang-en="International Thailand">เพื่อสากล (ประเทศไทย)</em>
+  </a>
+  <ul class="nav__links">
+    <li><a href="#products" data-lang-th="ผลิตภัณฑ์" data-lang-en="Products">ผลิตภัณฑ์</a></li>
+    <li><a href="#heritage" data-lang-th="มรดกภูมิปัญญา" data-lang-en="Heritage">มรดกภูมิปัญญา</a></li>
+    <li><a href="#mission" data-lang-th="พันธกิจ" data-lang-en="Mission">พันธกิจ</a></li>
+    <li><a href="#contact" data-lang-th="ติดต่อ" data-lang-en="Contact">ติดต่อ</a></li>
+  </ul>
+  <div class="nav__r">
+    <button class="lang-sw" aria-label="Switch language">
+      <i data-lucide="globe" width="14" height="14"></i>
+      <span class="lang-sw__label">TH</span>
+    </button>
+    <button class="nav__hbg" id="hbg" aria-label="Open menu">
+      <i data-lucide="menu" width="22" height="22"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mnav" id="mnav">
+  <button class="mnav__close" id="mclose" aria-label="Close">
+    <i data-lucide="x" width="24" height="24"></i>
+  </button>
+  <a href="#products" data-lang-th="ผลิตภัณฑ์" data-lang-en="Products">ผลิตภัณฑ์</a>
+  <a href="#heritage" data-lang-th="มรดกภูมิปัญญา" data-lang-en="Heritage">มรดกภูมิปัญญา</a>
+  <a href="#mission" data-lang-th="พันธกิจ" data-lang-en="Mission">พันธกิจ</a>
+  <a href="#contact" data-lang-th="ติดต่อ" data-lang-en="Contact">ติดต่อ</a>
+  <div class="mnav__lang">
+    <i data-lucide="globe" width="14" height="14"></i>
+    <span class="lang-sw__label" style="display:none"></span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__bg" id="hbg2"></div>
+  <div class="hero__veil"></div>
+  <div class="hero__c">
+    <div class="hero__eye rev" data-lang-th="สมุนไพรไทยแท้ · ความงามจากธรรมชาติ" data-lang-en="Pure Thai Botanicals · Beauty from Nature">สมุนไพรไทยแท้ · ความงามจากธรรมชาติ</div>
+    <h1 class="hero__h1 rev d1">ADINATH<br>FOR INTER-<br>NATIONAL</h1>
+    <p class="hero__th td rev d2" data-lang-th="อาดินาถเพื่อสากล" data-lang-en="Adinath for International">อาดินาถเพื่อสากล</p>
+    <p class="hero__body rev d2" data-lang-th="ผลิตภัณฑ์สมุนไพรไทยแท้ รังสรรค์ด้วยภูมิปัญญาโบราณ เพื่อความงามที่ยั่งยืนและจิตใจที่สงบสุข" data-lang-en="Authentic Thai herbal products crafted through ancient wisdom, for enduring beauty and inner tranquility.">ผลิตภัณฑ์สมุนไพรไทยแท้ รังสรรค์ด้วยภูมิปัญญาโบราณ เพื่อความงามที่ยั่งยืนและจิตใจที่สงบสุข</p>
+    <div class="cta-row rev d3">
+      <a href="#products" class="btn-p">
+        <i data-lucide="arrow-down" width="15" height="15"></i>
+        <span data-lang-th="สำรวจผลิตภัณฑ์" data-lang-en="Explore Products">สำรวจผลิตภัณฑ์</span>
+      </a>
+      <a href="#mission" class="btn-g">
+        <span data-lang-th="พันธกิจของเรา" data-lang-en="Our Mission">พันธกิจของเรา</span>
+      </a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span data-lang-th="เลื่อนลง" data-lang-en="scroll">เลื่อนลง</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="phi rev">
+  <div class="phi__n">001 — Philosophy</div>
+  <blockquote class="phi__q td" data-lang-th="&ldquo;ความงามที่แท้จริงเกิดจากความสมดุลระหว่างกายและใจ รากเหง้าของภูมิปัญญาไทยอยู่ในทุกหยดของผลิตภัณฑ์เรา&rdquo;" data-lang-en="&ldquo;True beauty is born of harmony between body and spirit — every drop carries the roots of two thousand years of Thai wisdom.&rdquo;">&ldquo;ความงามที่แท้จริงเกิดจากความสมดุลระหว่างกายและใจ รากเหง้าของภูมิปัญญาไทยอยู่ในทุกหยดของผลิตภัณฑ์เรา&rdquo;</blockquote>
+  <div class="phi__row">
+    <p class="phi__txt" data-lang-th="อาดินาถถือกำเนิดจากความเชื่อว่าธรรมชาติได้มอบทุกสิ่งที่ร่างกายต้องการไว้แล้ว สมุนไพรไทยที่คัดสรรอย่างพิถีพิถัน ผ่านกระบวนการผลิตที่ไม่มีสารเคมีอันตราย ไม่มีการทดลองกับสัตว์ มีเพียงความบริสุทธิ์และพลังงานจากแผ่นดิน" data-lang-en="Adinath was born from the belief that nature has already provided everything the body needs. Meticulously selected Thai botanicals processed without harmful chemicals, without animal testing — only purity and the quiet power of the earth.">อาดินาถถือกำเนิดจากความเชื่อว่าธรรมชาติได้มอบทุกสิ่งที่ร่างกายต้องการไว้แล้ว สมุนไพรไทยที่คัดสรรอย่างพิถีพิถัน ผ่านกระบวนการผลิตที่ไม่มีสารเคมีอันตราย ไม่มีการทดลองกับสัตว์ มีเพียงความบริสุทธิ์และพลังงานจากแผ่นดิน</p>
+    <div class="phi__stat">
+      <div class="phi__num">100%</div>
+      <p class="phi__lbl" data-lang-th="ส่วนผสมจากธรรมชาติ ปราศจากสารพาราเบนและสีสังเคราะห์ ผ่านการรับรองจากผู้เชี่ยวชาญสมุนไพรไทย" data-lang-en="Natural ingredients. Free from parabens and synthetic dyes. Certified by Thai herbal medicine specialists.">ส่วนผสมจากธรรมชาติ ปราศจากสารพาราเบนและสีสังเคราะห์ ผ่านการรับรองจากผู้เชี่ยวชาญสมุนไพรไทย</p>
+    </div>
+  </div>
+</section>
+
+<div class="hr"></div>
+
+<!-- PRODUCTS -->
+<section id="products">
+
+  <div class="prod-panel rev">
+    <div class="prod-panel__img">
+      <img src="https://images.unsplash.com/photo-1692635657494-1235987787e7?w=900&h=700&fit=crop" alt="Adinath herbal soap with natural botanicals" loading="lazy">
+    </div>
+    <div class="prod-panel__c">
+      <span class="prod-n">01</span>
+      <div class="prod-tag" data-lang-th="สบู่สมุนไพรไทย" data-lang-en="Thai Herbal Soap">สบู่สมุนไพรไทย</div>
+      <h2 class="prod-h">SACRED<br>HERB SOAP</h2>
+      <p class="prod-th td" data-lang-th="สบู่สมุนไพรศักดิ์สิทธิ์" data-lang-en="Sacred Botanical Cleansing Bar">สบู่สมุนไพรศักดิ์สิทธิ์</p>
+      <p class="prod-desc" data-lang-th="รังสรรค์จากสมุนไพรไทยแท้ที่มีคุณสมบัติต้านแบคทีเรีย บำรุงผิวให้นุ่มชุ่มชื้น กลิ่นหอมละเมียดจากธรรมชาติ เหมาะสำหรับผิวทุกประเภท" data-lang-en="Crafted from authentic Thai botanicals with natural antibacterial properties — nourishing skin to silky softness with a delicate fragrance. Suitable for all skin types.">รังสรรค์จากสมุนไพรไทยแท้ที่มีคุณสมบัติต้านแบคทีเรีย บำรุงผิวให้นุ่มชุ่มชื้น กลิ่นหอมละเมียดจากธรรมชาติ เหมาะสำหรับผิวทุกประเภท</p>
+      <div class="itags">
+        <span class="itag" data-lang-th="ขมิ้น" data-lang-en="Turmeric">ขมิ้น</span>
+        <span class="itag" data-lang-th="ตะไคร้" data-lang-en="Lemongrass">ตะไคร้</span>
+        <span class="itag" data-lang-th="มะกรูด" data-lang-en="Kaffir Lime">มะกรูด</span>
+        <span class="itag" data-lang-th="ว่านหางจระเข้" data-lang-en="Aloe Vera">ว่านหางจระเข้</span>
+      </div>
+      <a href="#contact" class="btn-p">
+        <span data-lang-th="สั่งซื้อเลย" data-lang-en="Order Now">สั่งซื้อเลย</span>
+        <i data-lucide="arrow-right" width="15" height="15"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="prod-panel rev d1">
+    <div class="prod-panel__img">
+      <img src="https://images.unsplash.com/photo-1642501777289-b67ef0ed7b99?w=900&h=700&fit=crop" alt="Adinath ritual body scrub" loading="lazy">
+    </div>
+    <div class="prod-panel__c">
+      <span class="prod-n">02</span>
+      <div class="prod-tag" data-lang-th="สครับผิวกาย" data-lang-en="Body Scrub">สครับผิวกาย</div>
+      <h2 class="prod-h">RITUAL<br>BODY SCRUB</h2>
+      <p class="prod-th td" data-lang-th="สครับพิธีกรรมแห่งการฟื้นฟู" data-lang-en="Renewal Ritual Scrub">สครับพิธีกรรมแห่งการฟื้นฟู</p>
+      <p class="prod-desc" data-lang-th="ผสมผสานแร่ธาตุจากเกลือทะเลและสมุนไพรไทยอันทรงคุณค่า ขจัดเซลล์ผิวเก่า กระตุ้นการไหลเวียนโลหิต ให้ผิวกระจ่างใสและอ่อนนุ่ม" data-lang-en="Blending sea mineral salts with precious Thai botanicals — exfoliating dead skin cells, stimulating circulation, revealing luminous and supple skin.">ผสมผสานแร่ธาตุจากเกลือทะเลและสมุนไพรไทยอันทรงคุณค่า ขจัดเซลล์ผิวเก่า กระตุ้นการไหลเวียนโลหิต ให้ผิวกระจ่างใสและอ่อนนุ่ม</p>
+      <div class="itags">
+        <span class="itag" data-lang-th="เกลือทะเล" data-lang-en="Sea Salt">เกลือทะเล</span>
+        <span class="itag" data-lang-th="ผิวมะกรูด" data-lang-en="Kaffir Peel">ผิวมะกรูด</span>
+        <span class="itag" data-lang-th="น้ำมันมะพร้าว" data-lang-en="Coconut Oil">น้ำมันมะพร้าว</span>
+        <span class="itag" data-lang-th="ชาเขียว" data-lang-en="Green Tea">ชาเขียว</span>
+      </div>
+      <a href="#contact" class="btn-p">
+        <span data-lang-th="สั่งซื้อเลย" data-lang-en="Order Now">สั่งซื้อเลย</span>
+        <i data-lucide="arrow-right" width="15" height="15"></i>
+      </a>
+    </div>
+  </div>
+
+</section>
+
+<!-- HERITAGE -->
+<section class="herit" id="heritage">
+  <div class="herit__top">
+    <div class="revL">
+      <h2 class="herit__h">THAI<br>HERITAGE<br><span>&amp; WISDOM</span></h2>
+    </div>
+    <div class="herit__side rev">
+      <p class="herit__txt" data-lang-th="ภูมิปัญญาสมุนไพรไทยสั่งสมมานานกว่าสองพันปี แต่ละตำรับถ่ายทอดจากรุ่นสู่รุ่นผ่านวัดวาอาราม โรงเรียนแพทย์แผนโบราณ และครอบครัว อาดินาถนำมรดกอันล้ำค่านี้มาสู่ผิวพรรณของคุณ" data-lang-en="Thai botanical wisdom has accumulated for over two millennia — each formula transmitted through temples, traditional medicine schools, and families. Adinath brings this precious heritage to your skin.">ภูมิปัญญาสมุนไพรไทยสั่งสมมานานกว่าสองพันปี แต่ละตำรับถ่ายทอดจากรุ่นสู่รุ่นผ่านวัดวาอาราม โรงเรียนแพทย์แผนโบราณ และครอบครัว อาดินาถนำมรดกอันล้ำค่านี้มาสู่ผิวพรรณของคุณ</p>
+      <a href="#mission" class="btn-g">
+        <span data-lang-th="อ่านเพิ่มเติม" data-lang-en="Learn More">อ่านเพิ่มเติม</span>
+        <i data-lucide="arrow-right" width="15" height="15"></i>
+      </a>
+    </div>
+  </div>
+  <div class="herit__imgs rev">
+    <img class="herit__img" src="https://images.unsplash.com/photo-1681035165031-5a67bbea474d?w=1000&h=460&fit=crop" alt="Thai temple at night with golden reflection" loading="lazy">
+    <img class="herit__img" src="https://images.unsplash.com/photo-1747071930210-f5b3bf45e6a2?w=600&h=460&fit=crop" alt="Buddhist monks walking in Thailand" loading="lazy">
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="vals" id="values">
+  <div class="vals__lbl rev" data-lang-th="คุณค่าที่เราเชื่อมั่น" data-lang-en="Values We Stand For">คุณค่าที่เราเชื่อมั่น</div>
+  <div class="vals__grid">
+
+    <div class="val rev">
+      <div class="val__icon"><i data-lucide="flame" width="26" height="26"></i></div>
+      <div class="val__num">001</div>
+      <div class="val__en">MAKING<br>MERIT</div>
+      <p class="val__th td" data-lang-th="การทำบุญ" data-lang-en="Almsgiving">การทำบุญ</p>
+      <p class="val__body" data-lang-th="ส่วนหนึ่งจากยอดขายทุกชิ้นมอบให้กับวัดและชุมชนท้องถิ่น สืบสานประเพณีการให้ทานอันงดงามของไทย" data-lang-en="A portion of every sale is given to temples and local communities, continuing the beautiful Thai tradition of giving and merit-making.">ส่วนหนึ่งจากยอดขายทุกชิ้นมอบให้กับวัดและชุมชนท้องถิ่น สืบสานประเพณีการให้ทานอันงดงามของไทย</p>
+    </div>
+
+    <div class="val rev d1">
+      <div class="val__icon"><i data-lucide="globe-2" width="26" height="26"></i></div>
+      <div class="val__num">002</div>
+      <div class="val__en">INTER-<br>NATIONAL PEACE</div>
+      <p class="val__th td" data-lang-th="สันติภาพสากล" data-lang-en="World Harmony">สันติภาพสากล</p>
+      <p class="val__body" data-lang-th="เราเชื่อว่าการแลกเปลี่ยนวัฒนธรรมผ่านผลิตภัณฑ์ท้องถิ่นคือสะพานเชื่อมความเข้าใจระหว่างผู้คนทั่วโลก" data-lang-en="We believe cultural exchange through local products is a bridge of understanding between people across the world.">เราเชื่อว่าการแลกเปลี่ยนวัฒนธรรมผ่านผลิตภัณฑ์ท้องถิ่นคือสะพานเชื่อมความเข้าใจระหว่างผู้คนทั่วโลก</p>
+    </div>
+
+    <div class="val rev d2">
+      <div class="val__icon"><i data-lucide="leaf" width="26" height="26"></i></div>
+      <div class="val__num">003</div>
+      <div class="val__en">GOOD<br>TRADITIONS</div>
+      <p class="val__th td" data-lang-th="ประเพณีที่ดีงาม" data-lang-en="Cultural Preservation">ประเพณีที่ดีงาม</p>
+      <p class="val__body" data-lang-th="อาดินาถอุทิศตนอนุรักษ์และเผยแพร่ประเพณีอันดีงามของไทย ให้คงอยู่และเป็นที่รู้จักทั่วโลก" data-lang-en="Adinath dedicates itself to preserving and sharing Thailand's rich traditions, ensuring they endure and are known throughout the world.">อาดินาถอุทิศตนอนุรักษ์และเผยแพร่ประเพณีอันดีงามของไทย ให้คงอยู่และเป็นที่รู้จักทั่วโลก</p>
+    </div>
+
+    <div class="val rev d3">
+      <div class="val__icon"><i data-lucide="sprout" width="26" height="26"></i></div>
+      <div class="val__num">004</div>
+      <div class="val__en">PURE<br>NATURE</div>
+      <p class="val__th td" data-lang-th="ธรรมชาติบริสุทธิ์" data-lang-en="Sustainable Purity">ธรรมชาติบริสุทธิ์</p>
+      <p class="val__body" data-lang-th="ทุกส่วนผสมมาจากแหล่งปลูกที่ยั่งยืน ไม่ใช้สารกำจัดศัตรูพืช สนับสนุนเกษตรกรรมอินทรีย์ไทย" data-lang-en="Every ingredient is sustainably sourced — no pesticides, supporting Thai organic farmers and the land they steward.">ทุกส่วนผสมมาจากแหล่งปลูกที่ยั่งยืน ไม่ใช้สารกำจัดศัตรูพืช สนับสนุนเกษตรกรรมอินทรีย์ไทย</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- INGREDIENTS -->
+<section class="ings" id="ingredients">
+  <div class="ings__hdr rev">
+    <h2 class="ings__hen">BOTANICAL<br>COMPENDIUM</h2>
+    <p class="ings__hth td" data-lang-th="คลังสมุนไพรอันล้ำค่า" data-lang-en="Our Precious Botanical Library">คลังสมุนไพรอันล้ำค่า</p>
+  </div>
+  <div class="ings__scroll">
+
+    <div class="ing rev">
+      <div class="ing__icon"><i data-lucide="sun" width="22" height="22"></i></div>
+      <div class="ing__en">TURMERIC</div>
+      <div class="ing__th td" data-lang-th="ขมิ้น" data-lang-en="Curcuma Longa">ขมิ้น</div>
+      <p class="ing__txt" data-lang-th="ต้านการอักเสบ ลดรอยด่างดำ บำรุงผิวกระจ่างใสตามธรรมชาติ ใช้ในตำรายาไทยมานานกว่า 3,000 ปี" data-lang-en="Anti-inflammatory, reduces hyperpigmentation, naturally brightens skin. Used in Thai medicine for over 3,000 years.">ต้านการอักเสบ ลดรอยด่างดำ บำรุงผิวกระจ่างใสตามธรรมชาติ ใช้ในตำรายาไทยมานานกว่า 3,000 ปี</p>
+      <div class="ing__bg">01</div>
+    </div>
+
+    <div class="ing rev d1">
+      <div class="ing__icon"><i data-lucide="wind" width="22" height="22"></i></div>
+      <div class="ing__en">LEMONGRASS</div>
+      <div class="ing__th td" data-lang-th="ตะไคร้" data-lang-en="Cymbopogon Citratus">ตะไคร้</div>
+      <p class="ing__txt" data-lang-th="ต้านแบคทีเรียและเชื้อรา ช่วยลดกลิ่นกาย ให้ความสดชื่น พร้อมกลิ่นหอมที่เป็นเอกลักษณ์" data-lang-en="Antibacterial and antifungal, reduces body odor and refreshes, with a uniquely uplifting fragrance.">ต้านแบคทีเรียและเชื้อรา ช่วยลดกลิ่นกาย ให้ความสดชื่น พร้อมกลิ่นหอมที่เป็นเอกลักษณ์</p>
+      <div class="ing__bg">02</div>
+    </div>
+
+    <div class="ing rev d2">
+      <div class="ing__icon"><i data-lucide="droplets" width="22" height="22"></i></div>
+      <div class="ing__en">KAFFIR LIME</div>
+      <div class="ing__th td" data-lang-th="มะกรูด" data-lang-en="Citrus Hystrix">มะกรูด</div>
+      <p class="ing__txt" data-lang-th="สารต้านอนุมูลอิสระสูง ชะลอริ้วรอย บำรุงเส้นผม ให้ผิวพรรณเปล่งปลั่ง" data-lang-en="High in antioxidants, delays aging, nourishes hair, and gives skin a radiant glow.">สารต้านอนุมูลอิสระสูง ชะลอริ้วรอย บำรุงเส้นผม ให้ผิวพรรณเปล่งปลั่ง</p>
+      <div class="ing__bg">03</div>
+    </div>
+
+    <div class="ing rev d3">
+      <div class="ing__icon"><i data-lucide="circle-dot" width="22" height="22"></i></div>
+      <div class="ing__en">COCONUT</div>
+      <div class="ing__th td" data-lang-th="มะพร้าว" data-lang-en="Cocos Nucifera">มะพร้าว</div>
+      <p class="ing__txt" data-lang-th="ให้ความชุ่มชื้นอย่างล้ำลึก บำรุงผิวให้นุ่มนวล ปกป้องชั้นผิวจากความแห้งกร้าน" data-lang-en="Delivers deep moisture, softens skin, and protects the barrier from dryness and environmental stress.">ให้ความชุ่มชื้นอย่างล้ำลึก บำรุงผิวให้นุ่มนวล ปกป้องชั้นผิวจากความแห้งกร้าน</p>
+      <div class="ing__bg">04</div>
+    </div>
+
+    <div class="ing rev d4">
+      <div class="ing__icon"><i data-lucide="flower" width="22" height="22"></i></div>
+      <div class="ing__en">JASMINE</div>
+      <div class="ing__th td" data-lang-th="มะลิ" data-lang-en="Jasminum Sambac">มะลิ</div>
+      <p class="ing__txt" data-lang-th="ดอกไม้มงคลของไทย มีสารบำรุงผิวชั้นเยี่ยม กลิ่นหอมอ่อนๆ ช่วยผ่อนคลายจิตใจ" data-lang-en="Thailand's auspicious blossom, with premium skin-nourishing compounds. Its gentle scent soothes the spirit.">ดอกไม้มงคลของไทย มีสารบำรุงผิวชั้นเยี่ยม กลิ่นหอมอ่อนๆ ช่วยผ่อนคลายจิตใจ</p>
+      <div class="ing__bg">05</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="mis" id="mission">
+  <div class="mis__bg"></div>
+  <div class="mis__veil"></div>
+  <div class="mis__c rev">
+    <div class="mis__eye" data-lang-th="พันธกิจของเรา" data-lang-en="Our Mission">พันธกิจของเรา</div>
+    <h2 class="mis__hen">BEYOND<br>BEAUTY</h2>
+    <p class="mis__hth td" data-lang-th="เพื่อสันติภาพ เพื่อวัฒนธรรม เพื่อโลกใบนี้" data-lang-en="For Peace · For Culture · For this World">เพื่อสันติภาพ เพื่อวัฒนธรรม เพื่อโลกใบนี้</p>
+    <p class="mis__txt" data-lang-th="อาดินาถไม่ใช่แค่ผลิตภัณฑ์บำรุงผิว แต่คือสะพานแห่งวัฒนธรรมที่เชื่อมโยงภูมิปัญญาไทยสู่สายตาโลก เราเชื่อว่าการทำบุญ การตักบาตร และการรักษาประเพณีอันดีงามคือรากฐานของสังคมสงบสุข" data-lang-en="Adinath is not merely a skincare product — it is a cultural bridge connecting Thai wisdom to the world. We believe that merit-making, giving alms, and preserving good traditions are the foundations of a peaceful society.">อาดินาถไม่ใช่แค่ผลิตภัณฑ์บำรุงผิว แต่คือสะพานแห่งวัฒนธรรมที่เชื่อมโยงภูมิปัญญาไทยสู่สายตาโลก เราเชื่อว่าการทำบุญ การตักบาตร และการรักษาประเพณีอันดีงามคือรากฐานของสังคมสงบสุข</p>
+    <a href="#contact" class="btn-p">
+      <span data-lang-th="ร่วมเดินทางกับเรา" data-lang-en="Join Our Journey">ร่วมเดินทางกับเรา</span>
+      <i data-lucide="arrow-right" width="15" height="15"></i>
+    </a>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi" id="testimonials">
+  <div class="testi__hdr rev">
+    <div class="testi__lbl" data-lang-th="เสียงจากลูกค้า" data-lang-en="Customer Voices">เสียงจากลูกค้า</div>
+    <h2 class="testi__hen">VOICES OF<br>TRUST</h2>
+  </div>
+  <div class="testi__grid">
+
+    <div class="tc rev">
+      <div class="tc__q">&ldquo;</div>
+      <p class="tc__txt" data-lang-th="สบู่อาดินาถเปลี่ยนผิวของฉันจริงๆ ไม่แพ้อะไรแม้ผิวบอบบางมาก กลิ่นหอมจากสมุนไพรธรรมชาติทำให้รู้สึกสดชื่นทุกวัน" data-lang-en="Adinath soap truly transformed my skin — no irritation even with my highly sensitive skin. The natural herbal fragrance makes every day feel fresh.">สบู่อาดินาถเปลี่ยนผิวของฉันจริงๆ ไม่แพ้อะไรแม้ผิวบอบบางมาก กลิ่นหอมจากสมุนไพรธรรมชาติทำให้รู้สึกสดชื่นทุกวัน</p>
+      <div class="tc__who">
+        <div class="tc__av"><i data-lucide="user" width="18" height="18"></i></div>
+        <div>
+          <div class="tc__name">Nattaya K.</div>
+          <div class="tc__loc" data-lang-th="กรุงเทพมหานคร ประเทศไทย" data-lang-en="Bangkok, Thailand">กรุงเทพมหานคร ประเทศไทย</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tc rev d1">
+      <div class="tc__q">&ldquo;</div>
+      <p class="tc__txt" data-lang-th="ประทับใจมากกับสครับผิวกาย รู้สึกได้ถึงความแตกต่างหลังใช้ครั้งแรก ผิวนุ่มและกระจ่างใสขึ้น แถมยังได้ทำบุญผ่านการซื้อด้วย" data-lang-en="The body scrub is remarkable — felt the difference after the very first use. Skin noticeably softer and brighter, and knowing my purchase supports merit-making makes it special.">ประทับใจมากกับสครับผิวกาย รู้สึกได้ถึงความแตกต่างหลังใช้ครั้งแรก ผิวนุ่มและกระจ่างใสขึ้น แถมยังได้ทำบุญผ่านการซื้อด้วย</p>
+      <div class="tc__who">
+        <div class="tc__av"><i data-lucide="user" width="18" height="18"></i></div>
+        <div>
+          <div class="tc__name">Priya M.</div>
+          <div class="tc__loc" data-lang-th="มุมไบ อินเดีย" data-lang-en="Mumbai, India">มุมไบ อินเดีย</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tc rev d2">
+      <div class="tc__q">&ldquo;</div>
+      <p class="tc__txt" data-lang-th="ผมค้นหาผลิตภัณฑ์สมุนไพรไทยแท้มานาน อาดินาถคือคำตอบ บรรจุภัณฑ์สวยงาม ส่วนผสมแท้ 100% รู้สึกได้ถึงจิตใจที่ใส่ลงไปในทุกชิ้น" data-lang-en="I've long searched for authentic Thai herbal products — Adinath is the answer. Beautiful presentation, 100% genuine ingredients, you can feel the soul in every piece.">ผมค้นหาผลิตภัณฑ์สมุนไพรไทยแท้มานาน อาดินาถคือคำตอบ บรรจุภัณฑ์สวยงาม ส่วนผสมแท้ 100% รู้สึกได้ถึงจิตใจที่ใส่ลงไปในทุกชิ้น</p>
+      <div class="tc__who">
+        <div class="tc__av"><i data-lucide="user" width="18" height="18"></i></div>
+        <div>
+          <div class="tc__name">Marco V.</div>
+          <div class="tc__loc" data-lang-th="มิลาน อิตาลี" data-lang-en="Milan, Italy">มิลาน อิตาลี</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="cont" id="contact">
+  <div class="cont__grid">
+    <div class="revL">
+      <h2 class="cont__hen">GET IN<br>TOUCH</h2>
+      <p class="cont__hth td" data-lang-th="ติดต่อเรา" data-lang-en="Reach Out to Us">ติดต่อเรา</p>
+      <p class="cont__txt" data-lang-th="สนใจผลิตภัณฑ์ ต้องการเป็นตัวแทนจำหน่าย หรืออยากร่วมสนับสนุนพันธกิจของเรา ทีมงานอาดินาถยินดีต้อนรับเสมอ" data-lang-en="Interested in our products, seeking to become a distributor, or wishing to support our mission — the Adinath team is always here for you.">สนใจผลิตภัณฑ์ ต้องการเป็นตัวแทนจำหน่าย หรืออยากร่วมสนับสนุนพันธกิจของเรา ทีมงานอาดินาถยินดีต้อนรับเสมอ</p>
+      <div class="cont__info">
+        <div class="cont__row">
+          <i data-lucide="map-pin" width="17" height="17"></i>
+          <span data-lang-th="กรุงเทพมหานคร ประเทศไทย" data-lang-en="Bangkok, Thailand">กรุงเทพมหานคร ประเทศไทย</span>
+        </div>
+        <div class="cont__row">
+          <i data-lucide="mail" width="17" height="17"></i>
+          <span>contact@adinath-international.th</span>
+        </div>
+        <div class="cont__row">
+          <i data-lucide="phone" width="17" height="17"></i>
+          <span>+66 2 XXX XXXX</span>
+        </div>
+      </div>
+    </div>
+    <div class="rev">
+      <form class="cform" onsubmit="return false;">
+        <input type="text" id="fi-name" placeholder="ชื่อ-นามสกุล">
+        <input type="email" id="fi-email" placeholder="อีเมล">
+        <textarea id="fi-msg" placeholder="ข้อความของคุณ"></textarea>
+        <button type="submit">
+          <span data-lang-th="ส่งข้อความ" data-lang-en="Send Message">ส่งข้อความ</span>
+          <i data-lucide="send" width="15" height="15"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="foot__logo">
+    Adinath
+    <em data-lang-th="เพื่อสากล (ประเทศไทย)" data-lang-en="International Thailand">เพื่อสากล (ประเทศไทย)</em>
+  </div>
+  <p class="foot__copy" data-lang-th="© 2024 อาดินาถเพื่อสากล สงวนลิขสิทธิ์" data-lang-en="© 2024 Adinath International. All rights reserved.">© 2024 อาดินาถเพื่อสากล สงวนลิขสิทธิ์</p>
+  <ul class="foot__links">
+    <li><a href="#products" data-lang-th="ผลิตภัณฑ์" data-lang-en="Products">ผลิตภัณฑ์</a></li>
+    <li><a href="#heritage" data-lang-th="มรดกภูมิปัญญา" data-lang-en="Heritage">มรดกภูมิปัญญา</a></li>
+    <li><a href="#mission" data-lang-th="พันธกิจ" data-lang-en="Mission">พันธกิจ</a></li>
+    <li><a href="#contact" data-lang-th="ติดต่อ" data-lang-en="Contact">ติดต่อ</a></li>
+  </ul>
+</footer>
+
+<script>
+// NAV SCROLL
+(function(){
+  var nav=document.getElementById('nav');
+  window.addEventListener('scroll',function(){
+    nav.classList.toggle('on',window.scrollY>60);
+  },{passive:true});
+})();
+
+// MOBILE MENU
+(function(){
+  var hbg=document.getElementById('hbg');
+  var mn=document.getElementById('mnav');
+  var mc=document.getElementById('mclose');
+  hbg.addEventListener('click',function(){mn.classList.add('open')});
+  mc.addEventListener('click',function(){mn.classList.remove('open')});
+  mn.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){mn.classList.remove('open')});
+  });
+})();
+
+// HERO BG SLOW ZOOM
+(function(){
+  var bg=document.getElementById('hbg2');
+  window.addEventListener('load',function(){bg.classList.add('loaded')});
+  window.addEventListener('scroll',function(){
+    if(window.scrollY<window.innerHeight){
+      bg.style.transform='scale(1) translateY('+(window.scrollY*0.22)+'px)';
+    }
+  },{passive:true});
+})();
+
+// INTERSECTION OBSERVER REVEALS
+(function(){
+  var els=document.querySelectorAll('.rev,.revL');
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+    });
+  },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){io.observe(el)});
+})();
+
+// FORM PLACEHOLDER UPDATE
+function setPlaceholders(l){
+  var n=document.getElementById('fi-name');
+  var e=document.getElementById('fi-email');
+  var m=document.getElementById('fi-msg');
+  if(l==='en'){
+    if(n)n.placeholder='Full Name';
+    if(e)e.placeholder='Email Address';
+    if(m)m.placeholder='Your Message';
+  }else{
+    if(n)n.placeholder='ชื่อ-นามสกุล';
+    if(e)e.placeholder='อีเมล';
+    if(m)m.placeholder='ข้อความของคุณ';
+  }
+}
+document.querySelector('.lang-sw').addEventListener('click',function(){
+  setTimeout(function(){
+    setPlaceholders(document.querySelector('.lang-sw__label').textContent.toLowerCase());
+  },20);
+});
+</script>
+
+<script>
+(function(){var K='site-lang',L=localStorage.getItem(K)||'th';function S(l){L=l;localStorage.setItem(K,l);document.documentElement.lang=l;document.querySelectorAll('[data-lang-th]').forEach(function(e){var t=e.getAttribute('data-lang-'+l);if(t!==null){e.textContent=t}});var lb=document.querySelector('.lang-sw__label');if(lb){lb.textContent=l.toUpperCase()}}var sw=document.querySelector('.lang-sw');if(sw){sw.addEventListener('click',function(){S(L==='th'?'en':'th')});sw.style.cursor='pointer'}if(L!=='th'){S(L)}})();
+</script>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>

@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>อาดินาถเพื่อสากล (ประเทศไทย) — สมุนไพรไทยแท้</title>
+<meta name="description" content="อาดินาถเพื่อสากล ผลิตภัณฑ์สมุนไพรไทยแท้ สบู่และสครับขัดผิว ด้วยจิตใจแห่งสันติและวัฒนธรรมอันงดงาม">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,300;0,6..96,400;1,6..96,300;1,6..96,400&family=Sarabun:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#1B1B1F;
+  --slate:#73737A;
+  --parch:#EBEBEA;
+  --chalk:#F9F9F7;
+  --ink10:rgba(27,27,31,.10);
+  --ink20:rgba(27,27,31,.20);
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Sarabun','Sukhumvit Set',sans-serif;
+  background:var(--chalk);
+  color:var(--ink);
+  line-height:1.8;
+  word-break:break-word;
+  overflow-wrap:break-word;
+  overflow-x:hidden;
+}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  padding:1.4rem 1.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .4s,padding .4s,border-color .4s;
+}
+nav.scrolled{
+  background:rgba(249,249,247,.96);
+  backdrop-filter:blur(10px);
+  padding:.8rem 1.5rem;
+  border-bottom:1px solid var(--ink10);
+}
+.nav-logo{
+  font-family:'Bodoni Moda',serif;
+  font-weight:300;font-style:italic;font-size:1.25rem;
+  color:var(--chalk);text-decoration:none;letter-spacing:.04em;
+  transition:color .4s;
+}
+nav.scrolled .nav-logo{color:var(--ink)}
+.nav-right{display:flex;align-items:center;gap:1.5rem}
+.nav-links{display:none;list-style:none;gap:2rem;align-items:center}
+.nav-links a{
+  font-size:.82rem;font-weight:300;
+  color:rgba(249,249,247,.75);text-decoration:none;
+  padding:.5rem 0;transition:color .3s;
+}
+nav.scrolled .nav-links a{color:var(--slate)}
+.nav-links a:hover{color:var(--chalk)}
+nav.scrolled .nav-links a:hover{color:var(--ink)}
+.lang-sw{
+  display:flex;align-items:center;gap:.3rem;
+  font-size:.78rem;font-weight:400;
+  color:rgba(249,249,247,.75);
+  background:none;border:none;padding:.4rem .2rem;
+  transition:color .3s;user-select:none;
+}
+nav.scrolled .lang-sw{color:var(--slate)}
+.lang-sw:hover{color:var(--chalk)}
+nav.scrolled .lang-sw:hover{color:var(--ink)}
+.lang-sw svg{width:14px;height:14px;stroke-width:1.5;flex-shrink:0}
+.hamburger{
+  display:flex;flex-direction:column;gap:5px;
+  background:none;border:none;cursor:pointer;padding:.5rem;
+}
+.hamburger span{
+  display:block;width:22px;height:1px;
+  background:var(--chalk);transition:background .3s;
+}
+nav.scrolled .hamburger span{background:var(--ink)}
+
+/* ── MOBILE MENU ── */
+.mobile-menu{
+  display:none;position:fixed;inset:0;
+  background:var(--ink);z-index:199;
+  flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;
+}
+.mobile-menu.open{display:flex}
+.mobile-menu a{
+  font-family:'Bodoni Moda',serif;
+  font-size:2.2rem;font-weight:300;font-style:italic;
+  color:var(--chalk);text-decoration:none;
+  transition:color .3s;
+}
+.mobile-menu a:hover{color:var(--slate)}
+.mob-close{
+  position:absolute;top:1.5rem;right:1.5rem;
+  background:none;border:none;color:var(--chalk);cursor:pointer;padding:.5rem;
+}
+
+/* ── HERO ── */
+.hero{
+  min-height:100svh;background:var(--ink);
+  position:relative;display:flex;flex-direction:column;
+  justify-content:flex-end;overflow:hidden;
+  padding:0 1.5rem 4.5rem;
+}
+.hero-bg{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;opacity:.22;
+  transform:scale(1.06);
+  animation:zoomout 14s ease-out forwards;
+}
+@keyframes zoomout{to{transform:scale(1)}}
+.hero-content{position:relative;z-index:2}
+.hero-eyebrow{
+  font-family:'Bodoni Moda',serif;
+  font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--slate);margin-bottom:1.8rem;
+}
+.hero-h1{
+  font-family:'Bodoni Moda',serif;
+  font-size:clamp(4rem,16vw,10.5rem);
+  font-weight:300;font-style:italic;
+  color:var(--chalk);line-height:.95;
+  letter-spacing:-.035em;margin-bottom:.25em;
+}
+.hero-sub{
+  font-size:clamp(1rem,3.5vw,1.4rem);
+  font-weight:300;color:var(--parch);
+  line-height:1.6;margin-bottom:2rem;
+}
+.hero-desc{
+  font-size:.88rem;color:var(--slate);
+  max-width:38ch;line-height:1.9;margin-bottom:2.5rem;
+}
+.hero-cta{
+  display:inline-flex;align-items:center;gap:.6rem;
+  border:1px solid rgba(249,249,247,.28);
+  color:var(--chalk);padding:.9rem 2rem;
+  font-family:'Sarabun',sans-serif;font-size:.83rem;font-weight:300;
+  text-decoration:none;letter-spacing:0;
+  transition:background .3s,border-color .3s;min-height:44px;
+}
+html[lang="en"] .hero-cta{letter-spacing:.08em}
+.hero-cta:hover{background:rgba(249,249,247,.09);border-color:rgba(249,249,247,.55)}
+.scroll-hint{
+  position:absolute;bottom:1.5rem;right:1.5rem;z-index:2;
+  display:flex;align-items:center;gap:.35rem;
+  font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--slate);animation:bob 2.5s ease-in-out infinite;
+}
+@keyframes bob{0%,100%{opacity:.45;transform:translateY(0)}50%{opacity:1;transform:translateY(4px)}}
+
+/* ── FRAGMENT HEADLINES ── */
+.frag{padding:4.5rem 1.5rem 0;background:var(--chalk);overflow:hidden}
+.frag-dark{background:var(--ink)}
+.frag-word{
+  font-family:'Bodoni Moda',serif;
+  font-size:clamp(5rem,22vw,14rem);
+  font-weight:300;font-style:italic;
+  color:var(--parch);line-height:.88;
+  letter-spacing:0;margin-left:0;
+  white-space:nowrap;
+}
+html[lang="en"] .frag-word{letter-spacing:-.04em;margin-left:-.04em}
+.frag-dark .frag-word{color:rgba(235,235,234,.12)}
+
+/* ── REVEAL ── */
+.rev{opacity:0;transform:translateY(26px);transition:opacity .7s ease-out,transform .7s ease-out}
+.rev.in{opacity:1;transform:none}
+.rev-d1{transition-delay:.1s}.rev-d2{transition-delay:.2s}.rev-d3{transition-delay:.32s}
+
+/* ── SECTION SHELL ── */
+.sec{padding:5rem 1.5rem}
+.sec-inner{max-width:640px;margin:0 auto}
+.sec-label{
+  font-family:'Bodoni Moda',serif;
+  font-size:.68rem;letter-spacing:0;text-transform:uppercase;
+  color:var(--slate);margin-bottom:1.8rem;display:block;
+}
+html[lang="en"] .sec-label{letter-spacing:.22em}
+.sec-h{
+  font-family:'Bodoni Moda',serif;
+  font-size:clamp(2.2rem,9vw,5rem);
+  font-weight:300;font-style:italic;
+  color:var(--ink);letter-spacing:0;line-height:1.1;
+  margin-bottom:.4rem;
+}
+html[lang="en"] .sec-h{letter-spacing:-.025em}
+.sec-h--light{color:var(--chalk)}
+.sec-h--slate{color:var(--slate)}
+
+/* ── INTRO ── */
+.intro-body{
+  font-size:1.15rem;font-weight:300;
+  line-height:2;color:var(--ink);
+}
+.intro-pull{
+  font-family:'Bodoni Moda',serif;
+  font-size:clamp(1.4rem,5vw,2.4rem);font-style:italic;font-weight:300;
+  color:var(--slate);line-height:1.45;
+  margin:3rem 0;padding-left:1.5rem;
+  border-left:1px solid var(--parch);
+}
+
+/* ── PRODUCTS ── */
+.products-wrap{background:var(--ink);padding-bottom:5rem}
+.products-head{padding:4.5rem 1.5rem 3rem}
+.prod-list{}
+.prod-item{
+  padding:3rem 1.5rem;
+  border-top:1px solid rgba(235,235,234,.1);
+}
+.prod-img-wrap{
+  width:100%;aspect-ratio:4/3;overflow:hidden;
+  margin-bottom:2rem;border-radius:2px;
+}
+.prod-img-wrap img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .8s ease;
+  filter:grayscale(15%) contrast(1.05);
+}
+.prod-item:hover .prod-img-wrap img{transform:scale(1.04)}
+.prod-num{
+  font-family:'Bodoni Moda',serif;
+  font-size:.66rem;letter-spacing:.2em;
+  color:var(--slate);margin-bottom:1rem;
+}
+.prod-name{
+  font-family:'Bodoni Moda',serif;
+  font-size:clamp(1.8rem,7vw,3.2rem);
+  font-weight:300;font-style:italic;
+  color:var(--chalk);line-height:1.1;
+  letter-spacing:0;margin-bottom:1.2rem;
+}
+html[lang="en"] .prod-name{letter-spacing:-.02em}
+.prod-desc{
+  font-size:.87rem;color:var(--slate);
+  line-height:2;margin-bottom:1.8rem;
+}
+.prod-tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:2rem}
+.prod-tag{
+  font-family:'Sarabun',sans-serif;
+  font-size:.7rem;letter-spacing:0;
+  color:var(--slate);
+  border:1px solid rgba(115,115,122,.35);
+  padding:.45rem .85rem;line-height:1.6;
+}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:.5rem;
+  color:var(--chalk);border:1px solid rgba(249,249,247,.18);
+  padding:.8rem 1.5rem;
+  font-family:'Sarabun',sans-serif;font-size:.82rem;font-weight:300;
+  text-decoration:none;transition:background .3s,border-color .3s;min-height:44px;
+}
+.btn-ghost:hover{background:rgba(249,249,247,.07);border-color:rgba(249,249,247,.45)}
+
+/* ── INGREDIENTS ── */
+.ingr-wrap{background:var(--ink);padding:5rem 1.5rem 6rem}
+.ingr-list{margin-top:3rem}
+.ingr-row{
+  display:flex;align-items:baseline;gap:.8rem;
+  padding:1.2rem 0;border-bottom:1px solid rgba(235,235,234,.09);
+}
+.ingr-en{
+  font-family:'Bodoni Moda',serif;
+  font-size:1.2rem;font-style:italic;font-weight:300;
+  color:var(--chalk);min-width:7.5rem;flex-shrink:0;
+}
+.ingr-sep{flex:1;height:1px;background:rgba(235,235,234,.09)}
+.ingr-th{font-size:.83rem;color:var(--slate);text-align:right;line-height:1.8}
+
+/* ── PHILOSOPHY ── */
+.phil-wrap{background:var(--chalk);padding:5rem 1.5rem;position:relative;overflow:hidden}
+.phil-blob{
+  position:absolute;top:-120px;left:-120px;
+  width:420px;height:420px;border-radius:50%;
+  background:var(--parch);opacity:.55;pointer-events:none;
+}
+.phil-img{
+  width:100%;aspect-ratio:16/9;object-fit:cover;
+  margin:3rem 0;filter:grayscale(25%) contrast(1.1);border-radius:2px;
+}
+.phil-values{margin-top:3rem}
+.val-item{
+  display:flex;align-items:flex-start;gap:1.4rem;
+  padding:1.6rem 0;border-bottom:1px solid var(--parch);
+}
+.val-num{
+  font-family:'Bodoni Moda',serif;
+  font-size:.62rem;letter-spacing:.15em;
+  color:var(--slate);padding-top:.5rem;min-width:1.8rem;
+}
+.val-title{
+  font-family:'Bodoni Moda',serif;
+  font-size:1.05rem;font-style:italic;font-weight:300;
+  color:var(--ink);margin-bottom:.35rem;line-height:1.4;
+}
+.val-desc{font-size:.85rem;color:var(--slate);line-height:1.95}
+
+/* ── CULTURE ── */
+.cult-wrap{
+  background:var(--parch);
+  padding:6rem 1.5rem 7rem;
+  clip-path:polygon(0 3.5%,100% 0,100% 96.5%,0 100%);
+  margin:-2px 0;
+}
+.cult-img-pair{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:1rem;margin:3rem 0;
+}
+.cult-img-pair img{
+  width:100%;aspect-ratio:3/4;object-fit:cover;
+  filter:grayscale(20%) contrast(1.05);
+}
+.cult-img-pair img:first-child{margin-top:2.5rem}
+.cult-body{font-size:1rem;font-weight:300;line-height:2;color:var(--ink)}
+.cult-quote{
+  font-family:'Bodoni Moda',serif;
+  font-size:clamp(1.35rem,5vw,2.1rem);
+  font-style:italic;font-weight:300;
+  color:var(--ink);line-height:1.5;
+  margin:3rem 0;text-align:center;
+}
+
+/* ── TESTIMONIALS ── */
+.test-wrap{background:var(--chalk);padding:6rem 1.5rem}
+.test-item{padding:2.5rem 0;border-bottom:1px solid var(--parch)}
+.test-item:last-child{border-bottom:none}
+.test-q{
+  font-family:'Bodoni Moda',serif;
+  font-style:italic;font-size:1.05rem;
+  line-height:1.85;color:var(--ink);margin-bottom:1.2rem;
+}
+.test-author{
+  font-family:'Bodoni Moda',serif;
+  font-size:.72rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--slate);
+}
+
+/* ── CONTACT ── */
+.contact-wrap{background:var(--ink);padding:6rem 1.5rem}
+.contact-inner{max-width:600px;margin:0 auto}
+.contact-form{display:flex;flex-direction:column;gap:1.4rem;margin-bottom:3.5rem}
+.f-field{display:flex;flex-direction:column;gap:.4rem}
+.f-label{
+  font-family:'Bodoni Moda',serif;
+  font-size:.68rem;letter-spacing:0;text-transform:uppercase;color:var(--slate);
+}
+html[lang="en"] .f-label{letter-spacing:.14em}
+.f-input,.f-area{
+  background:transparent;border:none;
+  border-bottom:1px solid rgba(235,235,234,.18);
+  color:var(--chalk);
+  font-family:'Sarabun',sans-serif;font-size:.95rem;font-weight:300;
+  padding:.75rem 0;outline:none;
+  transition:border-color .3s;width:100%;min-height:44px;
+}
+.f-area{resize:none;min-height:90px}
+.f-input::placeholder,.f-area::placeholder{color:rgba(115,115,122,.45);font-size:.88rem}
+.f-input:focus,.f-area:focus{border-bottom-color:rgba(235,235,234,.55)}
+.btn-submit{
+  display:inline-flex;align-items:center;gap:.6rem;
+  background:var(--chalk);color:var(--ink);border:none;
+  padding:1rem 2.5rem;
+  font-family:'Sarabun',sans-serif;font-size:.85rem;font-weight:400;
+  cursor:pointer;transition:background .3s,transform .25s;min-height:44px;
+  margin-top:.5rem;
+}
+.btn-submit:hover{background:var(--parch);transform:translateX(5px)}
+.contact-meta{display:flex;flex-direction:column;gap:1rem;margin-top:3.5rem}
+.contact-row{display:flex;align-items:center;gap:.75rem}
+.contact-row span{font-size:.85rem;color:var(--slate)}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);border-top:1px solid rgba(235,235,234,.07);padding:3rem 1.5rem}
+.foot-inner{max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:2rem}
+.foot-logo{font-family:'Bodoni Moda',serif;font-size:1.3rem;font-weight:300;font-style:italic;color:var(--chalk)}
+.foot-name{font-size:.73rem;color:var(--slate);margin-top:.3rem;line-height:1.8}
+.foot-links{display:flex;flex-wrap:wrap;gap:1.5rem}
+.foot-links a{
+  font-size:.8rem;color:var(--slate);text-decoration:none;
+  font-weight:300;transition:color .3s;padding:.4rem 0;
+}
+.foot-links a:hover{color:var(--chalk)}
+.foot-copy{font-size:.7rem;color:rgba(115,115,122,.55);line-height:1.8}
+
+/* ── DESKTOP ── */
+@media(min-width:768px){
+  nav{padding:1.5rem 3rem}
+  nav.scrolled{padding:.9rem 3rem}
+  .nav-links{display:flex}
+  .hamburger{display:none}
+
+  .hero{padding:0 4rem 5rem}
+  .hero-h1{font-size:clamp(5rem,12vw,10.5rem)}
+
+  .frag{padding:5.5rem 3rem 0}
+
+  .sec{padding:7rem 3rem}
+  .sec-inner{max-width:700px}
+
+  .products-head{padding:5rem 3rem 3.5rem}
+  .prod-item{
+    padding:4rem 3rem;
+    display:grid;grid-template-columns:1fr 1fr;
+    align-items:center;gap:4rem;
+  }
+  .prod-img-wrap{margin-bottom:0;aspect-ratio:1/1}
+  .prod-item:nth-child(even) .prod-img-wrap{order:2}
+  .prod-item:nth-child(even) .prod-info{order:1}
+
+  .ingr-wrap{padding:7rem 3rem 8rem}
+  .ingr-inner{max-width:700px;margin:0 auto}
+
+  .phil-wrap{padding:7rem 3rem}
+  .phil-inner{max-width:700px;margin:0 auto;position:relative}
+
+  .cult-wrap{padding:8rem 3rem 9rem}
+  .cult-inner{max-width:700px;margin:0 auto}
+  .cult-img-pair{grid-template-columns:1fr 1fr}
+
+  .test-wrap{padding:7rem 3rem}
+  .test-inner{max-width:700px;margin:0 auto}
+
+  .contact-wrap{padding:7rem 3rem}
+  footer{padding:4rem 3rem}
+  .foot-inner{flex-direction:row;justify-content:space-between;align-items:flex-end}
+}
+@media(min-width:1100px){
+  .hero{padding:0 6rem 5.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">Adinath</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#products" data-lang-th="ผลิตภัณฑ์" data-lang-en="Products">ผลิตภัณฑ์</a></li>
+      <li><a href="#philosophy" data-lang-th="ปรัชญา" data-lang-en="Philosophy">ปรัชญา</a></li>
+      <li><a href="#culture" data-lang-th="วัฒนธรรม" data-lang-en="Culture">วัฒนธรรม</a></li>
+      <li><a href="#contact" data-lang-th="ติดต่อ" data-lang-en="Contact">ติดต่อ</a></li>
+    </ul>
+    <button class="lang-sw" aria-label="Switch language">
+      <i data-lucide="globe"></i>
+      <span class="lang-sw__label">TH</span>
+    </button>
+    <button class="hamburger" id="hbg" aria-label="เปิดเมนู">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mob-menu">
+  <button class="mob-close" id="mob-close"><i data-lucide="x" style="width:26px;height:26px"></i></button>
+  <a href="#products" data-lang-th="ผลิตภัณฑ์" data-lang-en="Products">ผลิตภัณฑ์</a>
+  <a href="#philosophy" data-lang-th="ปรัชญา" data-lang-en="Philosophy">ปรัชญา</a>
+  <a href="#culture" data-lang-th="วัฒนธรรม" data-lang-en="Culture">วัฒนธรรม</a>
+  <a href="#contact" data-lang-th="ติดต่อ" data-lang-en="Contact">ติดต่อ</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-bg"
+    src="https://images.unsplash.com/photo-1504632236107-4ae29a44f388?w=1600&h=1000&fit=crop"
+    alt="Thai herbal ingredients">
+  <div class="hero-content">
+    <p class="hero-eyebrow">Thailand — Est. 2010</p>
+    <h1 class="hero-h1">Adinath</h1>
+    <p class="hero-sub" data-lang-th="อาดินาถเพื่อสากล (ประเทศไทย)" data-lang-en="Adinath for International (Thailand)">อาดินาถเพื่อสากล (ประเทศไทย)</p>
+    <p class="hero-desc" data-lang-th="สมุนไพรไทยแท้จากภูมิปัญญาบรรพบุรุษ บ่มเพาะด้วยความรักและศรัทธา เพื่อสืบสานวัฒนธรรมและสันติภาพสากล" data-lang-en="Authentic Thai herbal wisdom drawn from ancestral tradition — crafted with devotion to preserve culture and champion international peace.">สมุนไพรไทยแท้จากภูมิปัญญาบรรพบุรุษ บ่มเพาะด้วยความรักและศรัทธา เพื่อสืบสานวัฒนธรรมและสันติภาพสากล</p>
+    <a href="#products" class="hero-cta">
+      <span data-lang-th="ค้นพบผลิตภัณฑ์" data-lang-en="Explore Products">ค้นพบผลิตภัณฑ์</span>
+      <i data-lucide="arrow-down" style="width:14px;height:14px"></i>
+    </a>
+  </div>
+  <div class="scroll-hint">
+    <i data-lucide="chevron-down" style="width:12px;height:12px"></i>
+    <span>scroll</span>
+  </div>
+</section>
+
+<!-- FRAGMENT 1 -->
+<div class="frag">
+  <p class="frag-word" data-lang-th="บริสุทธิ์" data-lang-en="Pure">บริสุทธิ์</p>
+</div>
+
+<!-- INTRO -->
+<section class="sec" style="background:var(--chalk)">
+  <div class="sec-inner">
+    <span class="sec-label rev" data-lang-th="เกี่ยวกับเรา" data-lang-en="About Us">เกี่ยวกับเรา</span>
+    <p class="intro-body rev rev-d1" data-lang-th="อาดินาถก่อตั้งขึ้นจากความศรัทธาในสมุนไพรไทยโบราณ ที่ถ่ายทอดมาจากรุ่นสู่รุ่นด้วยความรัก ความอดทน และปัญญาอันลึกซึ้ง เราเชื่อว่าความงามที่แท้จริงนั้นมาจากธรรมชาติ และธรรมชาติที่งดงามที่สุดเจริญเติบโตบนแผ่นดินไทย" data-lang-en="Adinath was born from a deep reverence for Thailand's ancient herbal traditions — passed through generations with love, patience, and profound wisdom. We believe true beauty comes from nature, and the finest nature flourishes in Thai soil.">อาดินาถก่อตั้งขึ้นจากความศรัทธาในสมุนไพรไทยโบราณ ที่ถ่ายทอดมาจากรุ่นสู่รุ่นด้วยความรัก ความอดทน และปัญญาอันลึกซึ้ง เราเชื่อว่าความงามที่แท้จริงนั้นมาจากธรรมชาติ และธรรมชาติที่งดงามที่สุดเจริญเติบโตบนแผ่นดินไทย</p>
+    <blockquote class="intro-pull rev rev-d2" data-lang-th="&ldquo;ทุกก้อนสบู่คือการกราบไหว้ธรรมชาติและบรรพบุรุษ&rdquo;" data-lang-en="&ldquo;Every bar is a bow to nature and to those who knew her first.&rdquo;">&ldquo;ทุกก้อนสบู่คือการกราบไหว้ธรรมชาติและบรรพบุรุษ&rdquo;</blockquote>
+    <p class="intro-body rev rev-d3" data-lang-th="เราไม่ได้เพียงผลิตผลิตภัณฑ์ดูแลผิว หากแต่สืบสานมรดกทางวัฒนธรรม ส่งเสริมสันติภาพสากล และร่วมทำบุญให้ทานตามวิถีพุทธอันงดงาม ทุกครั้งที่คุณใช้ผลิตภัณฑ์อาดินาถ คุณเป็นส่วนหนึ่งของสิ่งที่ยิ่งใหญ่กว่า" data-lang-en="We do not merely make skincare — we preserve cultural heritage, champion international peace, and continue the Buddhist practice of giving. When you use Adinath, you become part of something far greater.">เราไม่ได้เพียงผลิตผลิตภัณฑ์ดูแลผิว หากแต่สืบสานมรดกทางวัฒนธรรม ส่งเสริมสันติภาพสากล และร่วมทำบุญให้ทานตามวิถีพุทธอันงดงาม ทุกครั้งที่คุณใช้ผลิตภัณฑ์อาดินาถ คุณเป็นส่วนหนึ่งของสิ่งที่ยิ่งใหญ่กว่า</p>
+  </div>
+</section>
+
+<!-- FRAGMENT 2 -->
+<div class="frag" style="background:var(--chalk)">
+  <p class="frag-word" data-lang-th="สมุนไพร" data-lang-en="Herb">สมุนไพร</p>
+</div>
+
+<!-- PRODUCTS -->
+<section class="products-wrap" id="products">
+  <div class="products-head rev">
+    <span class="sec-label" style="color:var(--slate)" data-lang-th="คอลเลกชัน" data-lang-en="Collection">คอลเลกชัน</span>
+    <h2 class="sec-h sec-h--light" data-lang-th="ผลิตภัณฑ์" data-lang-en="Products">ผลิตภัณฑ์</h2>
+    <p style="font-size:clamp(1rem,3.5vw,1.5rem);font-weight:300;color:var(--slate);line-height:1.7;margin-top:.4rem" data-lang-th="สมุนไพรไทยแท้ คัดสรรจากธรรมชาติ" data-lang-en="Pure Thai herbs, carefully selected from nature">สมุนไพรไทยแท้ คัดสรรจากธรรมชาติ</p>
+  </div>
+
+  <div class="prod-list">
+    <!-- 01 -->
+    <div class="prod-item rev">
+      <div class="prod-img-wrap">
+        <img src="https://images.unsplash.com/photo-1454873019514-eae2f086587a?w=700&h=700&fit=crop" alt="Adinath herbal soap">
+      </div>
+      <div class="prod-info">
+        <p class="prod-num">01</p>
+        <h3 class="prod-name" data-lang-th="สบู่สมุนไพร อาดินาถ" data-lang-en="Adinath Herbal Soap">สบู่สมุนไพร อาดินาถ</h3>
+        <p class="prod-desc" data-lang-th="ผสานพลังของขมิ้นชัน มะขามเปียก และดอกมะลิบริสุทธิ์ ช่วยให้ผิวกระจ่างใส ลดรอยด่างดำ บำรุงผิวด้วยธรรมชาติแท้ ปราศจากสารเคมีสังเคราะห์ทุกชนิด" data-lang-en="A union of turmeric, tamarind pulp, and pure jasmine blossom. Brightens skin, reduces dark spots, nourishes deeply — wholly free of synthetic chemicals.">ผสานพลังของขมิ้นชัน มะขามเปียก และดอกมะลิบริสุทธิ์ ช่วยให้ผิวกระจ่างใส ลดรอยด่างดำ บำรุงผิวด้วยธรรมชาติแท้ ปราศจากสารเคมีสังเคราะห์ทุกชนิด</p>
+        <div class="prod-tags">
+          <span class="prod-tag" data-lang-th="ขมิ้นชัน" data-lang-en="Turmeric">ขมิ้นชัน</span>
+          <span class="prod-tag" data-lang-th="มะขาม" data-lang-en="Tamarind">มะขาม</span>
+          <span class="prod-tag" data-lang-th="ดอกมะลิ" data-lang-en="Jasmine">ดอกมะลิ</span>
+        </div>
+        <a href="#contact" class="btn-ghost">
+          <span data-lang-th="สอบถามสินค้า" data-lang-en="Inquire">สอบถามสินค้า</span>
+          <i data-lucide="arrow-right" style="width:14px;height:14px"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- 02 -->
+    <div class="prod-item rev">
+      <div class="prod-img-wrap">
+        <img src="https://images.unsplash.com/photo-1779117691346-5de09d89a73f?w=700&h=700&fit=crop" alt="Herbal body scrub">
+      </div>
+      <div class="prod-info">
+        <p class="prod-num">02</p>
+        <h3 class="prod-name" data-lang-th="สครับขัดผิวสมุนไพร" data-lang-en="Herbal Body Scrub">สครับขัดผิวสมุนไพร</h3>
+        <p class="prod-desc" data-lang-th="สครับขัดผิวสูตรพิเศษจากรำข้าวไทย ตะไคร้หอม และมะกรูด ขจัดเซลล์ผิวเก่า คืนความเนียนนุ่ม และหอมอบอวลด้วยกลิ่นสมุนไพรไทยแท้" data-lang-en="A fine scrub of Thai rice bran, fragrant lemongrass, and kaffir lime peel. Removes dead skin, restores silky smoothness, and leaves a subtle, natural Thai herbal fragrance.">สครับขัดผิวสูตรพิเศษจากรำข้าวไทย ตะไคร้หอม และมะกรูด ขจัดเซลล์ผิวเก่า คืนความเนียนนุ่ม และหอมอบอวลด้วยกลิ่นสมุนไพรไทยแท้</p>
+        <div class="prod-tags">
+          <span class="prod-tag" data-lang-th="รำข้าว" data-lang-en="Rice Bran">รำข้าว</span>
+          <span class="prod-tag" data-lang-th="ตะไคร้" data-lang-en="Lemongrass">ตะไคร้</span>
+          <span class="prod-tag" data-lang-th="มะกรูด" data-lang-en="Kaffir Lime">มะกรูด</span>
+        </div>
+        <a href="#contact" class="btn-ghost">
+          <span data-lang-th="สอบถามสินค้า" data-lang-en="Inquire">สอบถามสินค้า</span>
+          <i data-lucide="arrow-right" style="width:14px;height:14px"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- 03 -->
+    <div class="prod-item rev">
+      <div class="prod-img-wrap">
+        <img src="https://images.unsplash.com/photo-1643716991729-0b3525fe8426?w=700&h=700&fit=crop" alt="White tamarind brightening soap">
+      </div>
+      <div class="prod-info">
+        <p class="prod-num">03</p>
+        <h3 class="prod-name" data-lang-th="สบู่มะขามขาว" data-lang-en="White Tamarind Soap">สบู่มะขามขาว</h3>
+        <p class="prod-desc" data-lang-th="กระชับรูขุมขนด้วยมะขามขาว น้ำผึ้งป่า และว่านหางจระเข้ บำรุงผิวให้ชุ่มชื่น กระจ่างใส ปรับสีผิวให้สม่ำเสมอ เหมาะสำหรับผิวแห้งและผิวผสม" data-lang-en="Pore-refining with white tamarind, wild honey, and aloe vera. Hydrates deeply, evens skin tone, and brightens — ideal for dry and combination skin.">กระชับรูขุมขนด้วยมะขามขาว น้ำผึ้งป่า และว่านหางจระเข้ บำรุงผิวให้ชุ่มชื่น กระจ่างใส ปรับสีผิวให้สม่ำเสมอ เหมาะสำหรับผิวแห้งและผิวผสม</p>
+        <div class="prod-tags">
+          <span class="prod-tag" data-lang-th="มะขามขาว" data-lang-en="White Tamarind">มะขามขาว</span>
+          <span class="prod-tag" data-lang-th="น้ำผึ้งป่า" data-lang-en="Wild Honey">น้ำผึ้งป่า</span>
+          <span class="prod-tag" data-lang-th="ว่านหางจระเข้" data-lang-en="Aloe Vera">ว่านหางจระเข้</span>
+        </div>
+        <a href="#contact" class="btn-ghost">
+          <span data-lang-th="สอบถามสินค้า" data-lang-en="Inquire">สอบถามสินค้า</span>
+          <i data-lucide="arrow-right" style="width:14px;height:14px"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- 04 -->
+    <div class="prod-item rev">
+      <div class="prod-img-wrap">
+        <img src="https://images.unsplash.com/photo-1643716990871-bad203890c24?w=700&h=700&fit=crop" alt="Honey turmeric scrub">
+      </div>
+      <div class="prod-info">
+        <p class="prod-num">04</p>
+        <h3 class="prod-name" data-lang-th="สครับน้ำผึ้งและขมิ้น" data-lang-en="Honey &amp; Turmeric Scrub">สครับน้ำผึ้งและขมิ้น</h3>
+        <p class="prod-desc" data-lang-th="สครับหรูหราจากน้ำผึ้งป่าไทยและขมิ้นชันบริสุทธิ์ ต้านอนุมูลอิสระ ลดการอักเสบ ฟื้นฟูผิวอย่างอ่อนโยน เหมาะสำหรับผิวบอบบางที่ต้องการการดูแลพิเศษ" data-lang-en="A luxurious blend of wild Thai honey and pure turmeric. Antioxidant-rich, anti-inflammatory, gently restorative — perfect for sensitive or fatigued skin.">สครับหรูหราจากน้ำผึ้งป่าไทยและขมิ้นชันบริสุทธิ์ ต้านอนุมูลอิสระ ลดการอักเสบ ฟื้นฟูผิวอย่างอ่อนโยน เหมาะสำหรับผิวบอบบางที่ต้องการการดูแลพิเศษ</p>
+        <div class="prod-tags">
+          <span class="prod-tag" data-lang-th="น้ำผึ้งป่า" data-lang-en="Wild Honey">น้ำผึ้งป่า</span>
+          <span class="prod-tag" data-lang-th="ขมิ้นชัน" data-lang-en="Turmeric">ขมิ้นชัน</span>
+          <span class="prod-tag" data-lang-th="ปราศจากสารเคมี" data-lang-en="Chemical-Free">ปราศจากสารเคมี</span>
+        </div>
+        <a href="#contact" class="btn-ghost">
+          <span data-lang-th="สอบถามสินค้า" data-lang-en="Inquire">สอบถามสินค้า</span>
+          <i data-lucide="arrow-right" style="width:14px;height:14px"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INGREDIENTS -->
+<div class="ingr-wrap">
+  <div class="ingr-inner">
+    <span class="sec-label rev" style="color:var(--slate)" data-lang-th="ส่วนผสมสำคัญ" data-lang-en="Key Ingredients">ส่วนผสมสำคัญ</span>
+    <h2 class="sec-h sec-h--light rev" data-lang-th="จากธรรมชาติ" data-lang-en="From Nature">จากธรรมชาติ</h2>
+    <div class="ingr-list rev rev-d1">
+      <div class="ingr-row">
+        <span class="ingr-en">Turmeric</span>
+        <span class="ingr-sep"></span>
+        <span class="ingr-th" data-lang-th="ขมิ้นชัน — ต้านอนุมูลอิสระ ลดรอยด่างดำ" data-lang-en="Antioxidant · brightening · anti-inflammatory">ขมิ้นชัน — ต้านอนุมูลอิสระ ลดรอยด่างดำ</span>
+      </div>
+      <div class="ingr-row">
+        <span class="ingr-en">Tamarind</span>
+        <span class="ingr-sep"></span>
+        <span class="ingr-th" data-lang-th="มะขาม — กรดธรรมชาติ ผลัดเซลล์ผิวเก่า" data-lang-en="Natural AHA · exfoliant · skin renewal">มะขาม — กรดธรรมชาติ ผลัดเซลล์ผิวเก่า</span>
+      </div>
+      <div class="ingr-row">
+        <span class="ingr-en">Jasmine</span>
+        <span class="ingr-sep"></span>
+        <span class="ingr-th" data-lang-th="ดอกมะลิ — หอมสงบจิต ฟื้นฟูผิว" data-lang-en="Calming fragrance · toning · restorative">ดอกมะลิ — หอมสงบจิต ฟื้นฟูผิว</span>
+      </div>
+      <div class="ingr-row">
+        <span class="ingr-en">Rice Bran</span>
+        <span class="ingr-sep"></span>
+        <span class="ingr-th" data-lang-th="รำข้าว — ขัดผิว อุดมวิตามินอี" data-lang-en="Gentle exfoliant · vitamin E · softening">รำข้าว — ขัดผิว อุดมวิตามินอี</span>
+      </div>
+      <div class="ingr-row">
+        <span class="ingr-en">Lemongrass</span>
+        <span class="ingr-sep"></span>
+        <span class="ingr-th" data-lang-th="ตะไคร้ — ต้านเชื้อแบคทีเรีย กระตุ้นการไหลเวียน" data-lang-en="Antibacterial · circulation-boosting · purifying">ตะไคร้ — ต้านเชื้อแบคทีเรีย กระตุ้นการไหลเวียน</span>
+      </div>
+      <div class="ingr-row">
+        <span class="ingr-en">Kaffir Lime</span>
+        <span class="ingr-sep"></span>
+        <span class="ingr-th" data-lang-th="มะกรูด — ขจัดกลิ่น บำรุงเส้นผม" data-lang-en="Purifying · deodorising · hair nourishing">มะกรูด — ขจัดกลิ่น บำรุงเส้นผม</span>
+      </div>
+      <div class="ingr-row">
+        <span class="ingr-en">Wild Honey</span>
+        <span class="ingr-sep"></span>
+        <span class="ingr-th" data-lang-th="น้ำผึ้งป่า — ให้ความชุ่มชื้น ต้านเชื้อ" data-lang-en="Deeply moisturising · antimicrobial · healing">น้ำผึ้งป่า — ให้ความชุ่มชื้น ต้านเชื้อ</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FRAGMENT 3 -->
+<div class="frag frag-dark" style="background:var(--ink)">
+  <p class="frag-word" style="color:rgba(235,235,234,.1)" data-lang-th="สันติ" data-lang-en="Peace">สันติ</p>
+</div>
+
+<!-- PHILOSOPHY -->
+<section class="phil-wrap" id="philosophy">
+  <div class="phil-blob"></div>
+  <div class="phil-inner sec-inner" style="position:relative">
+    <span class="sec-label rev" data-lang-th="ปรัชญาของเรา" data-lang-en="Our Philosophy">ปรัชญาของเรา</span>
+    <h2 class="sec-h rev" data-lang-th="มากกว่าความงาม" data-lang-en="Beyond Beauty">มากกว่าความงาม</h2>
+    <img class="phil-img rev"
+      src="https://images.unsplash.com/photo-1741778268815-e4f1976cc790?w=900&h=500&fit=crop"
+      alt="Thai temple at dawn">
+    <p class="intro-body rev" data-lang-th="ที่อาดินาถ เราเชื่อมั่นว่าการดูแลตนเองและการดูแลโลกเป็นสิ่งเดียวกัน ผลิตภัณฑ์ของเราเกิดจากความตั้งใจที่บริสุทธิ์ เชื่อมโยงผู้คนกับประเพณีที่มีความหมาย และส่งเสริมสันติภาพในระดับสากล" data-lang-en="At Adinath, we believe caring for oneself and caring for the world are one and the same. Our products are born from pure intention — connecting people with meaningful traditions and promoting international peace.">ที่อาดินาถ เราเชื่อมั่นว่าการดูแลตนเองและการดูแลโลกเป็นสิ่งเดียวกัน ผลิตภัณฑ์ของเราเกิดจากความตั้งใจที่บริสุทธิ์ เชื่อมโยงผู้คนกับประเพณีที่มีความหมาย และส่งเสริมสันติภาพในระดับสากล</p>
+    <div class="phil-values">
+      <div class="val-item rev">
+        <span class="val-num">01</span>
+        <div>
+          <p class="val-title" data-lang-th="สันติภาพสากล" data-lang-en="International Peace">สันติภาพสากล</p>
+          <p class="val-desc" data-lang-th="เราสนับสนุนการแลกเปลี่ยนทางวัฒนธรรมระหว่างประชาชาติ เพื่อสร้างความเข้าใจและมิตรภาพที่ยั่งยืน ผ่านศิลปะแห่งการดูแลตนเอง" data-lang-en="We champion cross-cultural exchange between nations, fostering enduring understanding and friendship through the quiet art of self-care.">เราสนับสนุนการแลกเปลี่ยนทางวัฒนธรรมระหว่างประชาชาติ เพื่อสร้างความเข้าใจและมิตรภาพที่ยั่งยืน ผ่านศิลปะแห่งการดูแลตนเอง</p>
+        </div>
+      </div>
+      <div class="val-item rev rev-d1">
+        <span class="val-num">02</span>
+        <div>
+          <p class="val-title" data-lang-th="ประเพณีอันดีงาม" data-lang-en="Noble Traditions">ประเพณีอันดีงาม</p>
+          <p class="val-desc" data-lang-th="เราอนุรักษ์และถ่ายทอดประเพณีไทยที่ดีงาม ตั้งแต่ภูมิปัญญาสมุนไพรไปจนถึงพิธีกรรมแห่งความกตัญญูและการให้เกียรติซึ่งกันและกัน" data-lang-en="We preserve and transmit the finest Thai traditions — from herbal wisdom to the rituals of gratitude and mutual respect.">เราอนุรักษ์และถ่ายทอดประเพณีไทยที่ดีงาม ตั้งแต่ภูมิปัญญาสมุนไพรไปจนถึงพิธีกรรมแห่งความกตัญญูและการให้เกียรติซึ่งกันและกัน</p>
+        </div>
+      </div>
+      <div class="val-item rev rev-d2">
+        <span class="val-num">03</span>
+        <div>
+          <p class="val-title" data-lang-th="การทำบุญและให้ทาน" data-lang-en="Merit &amp; Giving">การทำบุญและให้ทาน</p>
+          <p class="val-desc" data-lang-th="ส่วนหนึ่งของรายได้ทุกครั้งมอบให้แก่วัดและมูลนิธิท้องถิ่น เพื่อสืบสานวิถีแห่งการให้ทานตามหลักพุทธธรรม ดังที่บรรพบุรุษได้สั่งสอนไว้" data-lang-en="A portion of every sale is offered to local temples and foundations, continuing the Buddhist practice of giving — just as our ancestors taught.">ส่วนหนึ่งของรายได้ทุกครั้งมอบให้แก่วัดและมูลนิธิท้องถิ่น เพื่อสืบสานวิถีแห่งการให้ทานตามหลักพุทธธรรม ดังที่บรรพบุรุษได้สั่งสอนไว้</p>
+        </div>
+      </div>
+      <div class="val-item rev rev-d3">
+        <span class="val-num">04</span>
+        <div>
+          <p class="val-title" data-lang-th="วัฒนธรรมและศิลปะ" data-lang-en="Culture &amp; Art">วัฒนธรรมและศิลปะ</p>
+          <p class="val-desc" data-lang-th="เราร่วมมือกับศิลปินและช่างฝีมือท้องถิ่น เพื่อให้งานศิลปะแห่งวัฒนธรรมไทยมีชีวิตอยู่ในทุกบรรจุภัณฑ์และผลิตภัณฑ์" data-lang-en="We collaborate with local artisans so that Thai cultural arts live on in every package and product we craft.">เราร่วมมือกับศิลปินและช่างฝีมือท้องถิ่น เพื่อให้งานศิลปะแห่งวัฒนธรรมไทยมีชีวิตอยู่ในทุกบรรจุภัณฑ์และผลิตภัณฑ์</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CULTURE -->
+<section class="cult-wrap" id="culture">
+  <div class="cult-inner sec-inner">
+    <span class="sec-label rev" data-lang-th="วัฒนธรรมและประเพณี" data-lang-en="Culture &amp; Tradition">วัฒนธรรมและประเพณี</span>
+    <h2 class="sec-h rev" data-lang-th="รากเหง้าที่ลึกซึ้ง" data-lang-en="Deep Roots">รากเหง้าที่ลึกซึ้ง</h2>
+    <div class="cult-img-pair rev rev-d1">
+      <img src="https://images.unsplash.com/photo-1731990549901-21b977b0016a?w=400&h=540&fit=crop" alt="Monks walking for alms">
+      <img src="https://images.unsplash.com/photo-1690622042438-ba3b05ca30ad?w=400&h=540&fit=crop" alt="Thai botanical flowers">
+    </div>
+    <p class="cult-body rev" data-lang-th="การตักบาตรในยามเช้าเป็นมากกว่าพิธีกรรม มันคือการเชื่อมต่อกับสิ่งที่สำคัญที่สุดในชีวิต — การให้โดยไม่หวังสิ่งตอบแทน ความเชื่อว่าธรรมชาติและมนุษย์เป็นหนึ่งเดียวกัน ผลิตภัณฑ์อาดินาถเกิดจากจิตใจที่เดียวกันนี้เสมอ" data-lang-en="The morning alms-giving is more than ritual — it is a reconnection with what truly matters. Giving without expectation. The belief that nature and humanity are one. Adinath products are always born from that same spirit.">การตักบาตรในยามเช้าเป็นมากกว่าพิธีกรรม มันคือการเชื่อมต่อกับสิ่งที่สำคัญที่สุดในชีวิต — การให้โดยไม่หวังสิ่งตอบแทน ความเชื่อว่าธรรมชาติและมนุษย์เป็นหนึ่งเดียวกัน ผลิตภัณฑ์อาดินาถเกิดจากจิตใจที่เดียวกันนี้เสมอ</p>
+    <blockquote class="cult-quote rev rev-d1" data-lang-th="&ldquo;ในความเงียบของยามเช้า ธรรมชาติกระซิบว่า — ทุกสิ่งล้วนเชื่อมโยงกัน&rdquo;" data-lang-en="&ldquo;In the silence of morning, nature whispers — all things are connected.&rdquo;">&ldquo;ในความเงียบของยามเช้า ธรรมชาติกระซิบว่า — ทุกสิ่งล้วนเชื่อมโยงกัน&rdquo;</blockquote>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="test-wrap">
+  <div class="test-inner sec-inner">
+    <span class="sec-label rev" data-lang-th="เสียงจากลูกค้า" data-lang-en="Voices">เสียงจากลูกค้า</span>
+    <h2 class="sec-h rev" data-lang-th="ความประทับใจ" data-lang-en="Impressions">ความประทับใจ</h2>
+    <div class="test-item rev rev-d1">
+      <p class="test-q" data-lang-th="&ldquo;กลิ่นของสบู่พาฉันกลับไปที่วัดในวัยเด็ก ไม่เคยคิดว่าของใช้ประจำวันจะทำให้ฉันรู้สึกสงบได้ขนาดนี้&rdquo;" data-lang-en="&ldquo;The scent of this soap transported me back to a temple I visited as a child. I never imagined a daily ritual could bring such stillness.&rdquo;">&ldquo;กลิ่นของสบู่พาฉันกลับไปที่วัดในวัยเด็ก ไม่เคยคิดว่าของใช้ประจำวันจะทำให้ฉันรู้สึกสงบได้ขนาดนี้&rdquo;</p>
+      <p class="test-author">— Nattaya P., Bangkok</p>
+    </div>
+    <div class="test-item rev rev-d2">
+      <p class="test-q" data-lang-th="&ldquo;ผิวฉันดีขึ้นมากหลังจากใช้สครับสมุนไพรเป็นประจำ แต่สิ่งที่ประทับใจกว่าคือเรื่องราวเบื้องหลังแบรนด์ที่ทำให้อยากสนับสนุนอย่างจริงใจ&rdquo;" data-lang-en="&ldquo;My skin improved noticeably — but what moved me most was the story behind the brand. It makes you want to support this genuinely.&rdquo;">&ldquo;ผิวฉันดีขึ้นมากหลังจากใช้สครับสมุนไพรเป็นประจำ แต่สิ่งที่ประทับใจกว่าคือเรื่องราวเบื้องหลังแบรนด์ที่ทำให้อยากสนับสนุนอย่างจริงใจ&rdquo;</p>
+      <p class="test-author">— Hiroshi M., Osaka</p>
+    </div>
+    <div class="test-item rev rev-d3">
+      <p class="test-q" data-lang-th="&ldquo;ฉันซื้อเป็นของขวัญให้แม่ เธอบอกว่านี่คือของขวัญที่ดีที่สุดที่เคยได้รับ เพราะมันมีทั้งคุณภาพและความหมายที่ลึกซึ้ง&rdquo;" data-lang-en="&ldquo;I gave these as a gift to my mother. She said it was the most meaningful gift she had ever received — both in quality and in spirit.&rdquo;">&ldquo;ฉันซื้อเป็นของขวัญให้แม่ เธอบอกว่านี่คือของขวัญที่ดีที่สุดที่เคยได้รับ เพราะมันมีทั้งคุณภาพและความหมายที่ลึกซึ้ง&rdquo;</p>
+      <p class="test-author">— Amara S., Chiang Mai</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-wrap" id="contact">
+  <div class="contact-inner">
+    <span class="sec-label rev" style="color:var(--slate)" data-lang-th="ติดต่อเรา" data-lang-en="Get in Touch">ติดต่อเรา</span>
+    <h2 class="sec-h sec-h--light rev" data-lang-th="สอบถาม" data-lang-en="Enquire">สอบถาม</h2>
+    <p style="font-size:clamp(1rem,3.5vw,1.35rem);font-weight:300;color:var(--slate);line-height:1.7;margin-bottom:3rem" class="rev rev-d1" data-lang-th="มีคำถาม หรืออยากสั่งซื้อ? เราพร้อมตอบทุกข้อสงสัยด้วยความยินดี" data-lang-en="Have a question or wish to order? We are glad to assist with every inquiry.">มีคำถาม หรืออยากสั่งซื้อ? เราพร้อมตอบทุกข้อสงสัยด้วยความยินดี</p>
+    <form class="contact-form rev rev-d2" onsubmit="return false">
+      <div class="f-field">
+        <label class="f-label" data-lang-th="ชื่อ" data-lang-en="Name">ชื่อ</label>
+        <input type="text" class="f-input" placeholder="กรุณากรอกชื่อของคุณ">
+      </div>
+      <div class="f-field">
+        <label class="f-label" data-lang-th="อีเมล" data-lang-en="Email">อีเมล</label>
+        <input type="email" class="f-input" placeholder="your@email.com">
+      </div>
+      <div class="f-field">
+        <label class="f-label" data-lang-th="ข้อความ" data-lang-en="Message">ข้อความ</label>
+        <textarea class="f-area" rows="4" placeholder="กรุณากรอกข้อความ..."></textarea>
+      </div>
+      <button type="submit" class="btn-submit">
+        <span data-lang-th="ส่งข้อความ" data-lang-en="Send Message">ส่งข้อความ</span>
+        <i data-lucide="send" style="width:14px;height:14px"></i>
+      </button>
+    </form>
+    <div class="contact-meta rev">
+      <div class="contact-row">
+        <i data-lucide="map-pin" style="width:15px;height:15px;color:var(--slate);flex-shrink:0"></i>
+        <span data-lang-th="กรุงเทพมหานคร ประเทศไทย" data-lang-en="Bangkok, Thailand">กรุงเทพมหานคร ประเทศไทย</span>
+      </div>
+      <div class="contact-row">
+        <i data-lucide="mail" style="width:15px;height:15px;color:var(--slate);flex-shrink:0"></i>
+        <span>hello@adinath-international.th</span>
+      </div>
+      <div class="contact-row">
+        <i data-lucide="phone" style="width:15px;height:15px;color:var(--slate);flex-shrink:0"></i>
+        <span>+66 2 000 0000</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-logo">Adinath</p>
+      <p class="foot-name" data-lang-th="อาดินาถเพื่อสากล (ประเทศไทย)" data-lang-en="Adinath for International (Thailand)">อาดินาถเพื่อสากล (ประเทศไทย)</p>
+    </div>
+    <div>
+      <nav class="foot-links" aria-label="Footer navigation">
+        <a href="#products" data-lang-th="ผลิตภัณฑ์" data-lang-en="Products">ผลิตภัณฑ์</a>
+        <a href="#philosophy" data-lang-th="ปรัชญา" data-lang-en="Philosophy">ปรัชญา</a>
+        <a href="#culture" data-lang-th="วัฒนธรรม" data-lang-en="Culture">วัฒนธรรม</a>
+        <a href="#contact" data-lang-th="ติดต่อ" data-lang-en="Contact">ติดต่อ</a>
+      </nav>
+      <p class="foot-copy" style="margin-top:1.5rem" data-lang-th="© 2026 อาดินาถเพื่อสากล (ประเทศไทย). สงวนลิขสิทธิ์" data-lang-en="© 2026 Adinath for International (Thailand). All rights reserved.">© 2026 อาดินาถเพื่อสากล (ประเทศไทย). สงวนลิขสิทธิ์</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lucide@0.460.0"></script>
+<script>
+// Hamburger
+(function(){
+  var hbg=document.getElementById('hbg');
+  var mob=document.getElementById('mob-menu');
+  var cls=document.getElementById('mob-close');
+  function open(){mob.classList.add('open');document.body.style.overflow='hidden'}
+  function close(){mob.classList.remove('open');document.body.style.overflow=''}
+  hbg.addEventListener('click',open);
+  cls.addEventListener('click',close);
+  mob.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close)});
+})();
+
+// Nav scroll
+(function(){
+  var nav=document.getElementById('nav');
+  window.addEventListener('scroll',function(){
+    nav.classList.toggle('scrolled',window.scrollY>60);
+  },{passive:true});
+})();
+
+// Scroll reveal
+(function(){
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}
+    });
+  },{threshold:0.1});
+  document.querySelectorAll('.rev').forEach(function(el){obs.observe(el)});
+})();
+
+lucide.createIcons();
+</script>
+<script>
+(function(){var K='site-lang',L=localStorage.getItem(K)||'th';function S(l){L=l;localStorage.setItem(K,l);document.documentElement.lang=l;document.querySelectorAll('[data-lang-th]').forEach(function(e){var t=e.getAttribute('data-lang-'+l);if(t!==null){e.textContent=t}});var lb=document.querySelector('.lang-sw__label');if(lb){lb.textContent=l.toUpperCase()}}var sw=document.querySelector('.lang-sw');if(sw){sw.addEventListener('click',function(){S(L==='th'?'en':'th')});sw.style.cursor='pointer'}if(L!=='th'){S(L)}})();
+</script>
+</body>
+</html>
